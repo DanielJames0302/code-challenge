@@ -1,5 +1,4 @@
 import SwapForm from "@/components/form/swap-form";
-import Image from "next/image";
 
 export default function Home() {
   return (
