@@ -4,22 +4,10 @@ import { useState, useEffect, ChangeEvent } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import {
-  Command,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-} from "@/components/ui/command";
+
 import axios from "axios";
 import { ExchangeRates, Token } from "@/types/types";
-import Image from "next/image";
+
 import {
   Card,
   CardContent,
@@ -30,7 +18,7 @@ import {
 } from "@/components/ui/card";
 import { ClipLoader } from "react-spinners";
 import { toast, ToastContainer } from "react-toastify";
-import { ChevronsUpDown, Check } from "lucide-react";
+import CurrencySelect from "../select/currency-select";
 
 const SWAP_API = "https://interview.switcheo.com/prices.json";
 
@@ -59,7 +47,7 @@ export default function SwapForm() {
     axios
       .get(SWAP_API)
       .then(({ data }) => {
-        // 1. Deduplicate tokens by currency using the latest date
+        // Deduplicate tokens by currency using the latest date
         const dedupedTokens = data.reduce(
           (acc: Record<string, Token>, token: Token) => {
             if (
@@ -95,6 +83,7 @@ export default function SwapForm() {
   const handleSwap = () => {
     setFromToken(toToken);
     setToToken(fromToken);
+    setShowWalletOption(false);
   };
 
   const handleFromTokenChange = (value: string): void => {
@@ -102,6 +91,8 @@ export default function SwapForm() {
       setToToken(fromToken);
     }
     setFromToken(value);
+    setConvertedAmount("0.00");
+    setShowWalletOption(false);
   };
 
   const handleToTokenChange = (value: string): void => {
@@ -109,6 +100,8 @@ export default function SwapForm() {
       setFromToken(toToken);
     }
     setToToken(value);
+    setConvertedAmount("0.00");
+    setShowWalletOption(false);
   };
 
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -194,75 +187,16 @@ export default function SwapForm() {
                     className="w-full"
                     id="from"
                   />
-                  <Popover open={openFrom} onOpenChange={setOpenFrom}>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={openFrom}
-                        className="w-full justify-between"
-                      >
-                        {fromToken ? (
-                          <div className="flex items-center">
-                            <Image
-                              width={20}
-                              height={20}
-                              src={`/tokens/${fromToken}.svg`}
-                              alt={fromToken}
-                              className="inline mr-2"
-                            />
-                            <span>{fromToken}</span>
-                          </div>
-                        ) : (
-                          "Select currency"
-                        )}
-                        <ChevronsUpDown className="opacity-50" />
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-[200px] p-0">
-                      <Command>
-                        <CommandInput
-                          placeholder="Search currency"
-                          value={fromSearchQuery}
-                          onValueChange={setFromSearchQuery}
-                        />
-                        <CommandList>
-                          <CommandEmpty>No currency found.</CommandEmpty>
-                          <CommandGroup>
-                            {tokens
-                              .filter((token) =>
-                                token.currency
-                                  .toLowerCase()
-                                  .includes(fromSearchQuery.toLowerCase())
-                              )
-                              .map((token) => (
-                                <CommandItem
-                                  key={token.currency}
-                                  value={token.currency}
-                                  onSelect={(currentValue) => {
-                                    handleFromTokenChange(currentValue);
-                                    setOpenFrom(false);
-                                    setFromSearchQuery("");
-                                  }}
-                                >
-                                  <Image
-                                    width={20}
-                                    height={20}
-                                    src={`/tokens/${token.currency}.svg`}
-                                    alt={token.currency}
-                                    className="inline mr-2"
-                                  />
-                                  {token.currency}
-                                  {fromToken === token.currency && (
-                                    <Check className="ml-auto opacity-100" />
-                                  )}
-                                </CommandItem>
-                              ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    </PopoverContent>
-                  </Popover>
+            
+                  <CurrencySelect
+                    currentToken={fromToken}
+                    searchQuery={fromSearchQuery}
+                    handleTokenChange={handleFromTokenChange}
+                    setSearchQuery={setFromSearchQuery}
+                    tokens={tokens}
+                    open={openFrom}
+                    setOpen={setOpenFrom}
+                  />
                 </div>
               </div>
 
@@ -277,80 +211,19 @@ export default function SwapForm() {
                 </motion.button>
               </div>
 
-              {/* To Currency with Combobox */}
               <div className="w-full mb-4">
                 <label className="block text-sm font-medium mb-1">To</label>
                 <div className="grid grid-cols-2 items-center gap-2">
                   <div className="text-2xl font-bold">{convertedAmount}</div>
-                  <Popover open={openTo} onOpenChange={setOpenTo}>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={openTo}
-                        className="w-full justify-between"
-                      >
-                        {toToken ? (
-                          <div className="flex items-center">
-                            <Image
-                              width={20}
-                              height={20}
-                              src={`/tokens/${toToken}.svg`}
-                              alt={toToken}
-                              className="inline mr-2"
-                            />
-                            <span>{toToken}</span>
-                          </div>
-                        ) : (
-                          "Select currency"
-                        )}
-                        <ChevronsUpDown className="opacity-50" />
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-[200px] p-0">
-                      <Command>
-                        <CommandInput
-                          placeholder="Search currency..."
-                          value={toSearchQuery}
-                          onValueChange={setToSearchQuery}
-                        />
-                        <CommandList>
-                          <CommandEmpty>No currency found.</CommandEmpty>
-                          <CommandGroup>
-                            {tokens
-                              .filter((token) =>
-                                token.currency
-                                  .toLowerCase()
-                                  .includes(toSearchQuery.toLowerCase())
-                              )
-                              .map((token) => (
-                                <CommandItem
-                                  key={token.currency}
-                                  value={token.currency}
-                                  onSelect={(currentValue) => {
-                                    handleToTokenChange(currentValue);
-                                    setOpenTo(false);
-                                    setToSearchQuery("");
-                                  }}
-                                >
-                                  <Image
-                                    width={20}
-                                    height={20}
-                                    src={`/tokens/${token.currency}.svg`}
-                                    alt={token.currency}
-                                    className="inline mr-2"
-                                  />
-                                  {token.currency}
-                                  {toToken === token.currency && (
-                                    <Check className="ml-auto opacity-100" />
-                                  )}
-                                </CommandItem>
-                              ))}
-                          </CommandGroup>
-                        </CommandList>
-                      </Command>
-                    </PopoverContent>
-                  </Popover>
+                  <CurrencySelect
+                    currentToken={toToken}
+                    searchQuery={toSearchQuery}
+                    handleTokenChange={handleToTokenChange}
+                    setSearchQuery={setToSearchQuery}
+                    tokens={tokens}
+                    open={openTo}
+                    setOpen={setOpenTo}
+                  />
                 </div>
               </div>
             </div>
