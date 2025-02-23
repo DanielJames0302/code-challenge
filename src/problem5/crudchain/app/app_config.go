@@ -53,7 +53,10 @@ import (
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 	"google.golang.org/protobuf/types/known/durationpb"
 
+	crudmodulev1 "crudchain/api/crudchain/crud/module"
 	crudchainmodulev1 "crudchain/api/crudchain/crudchain/module"
+	_ "crudchain/x/crud/module" // import for side-effects
+	crudmoduletypes "crudchain/x/crud/types"
 	_ "crudchain/x/crudchain/module" // import for side-effects
 	crudchainmoduletypes "crudchain/x/crudchain/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
@@ -94,6 +97,7 @@ var (
 		circuittypes.ModuleName,
 		// chain modules
 		crudchainmoduletypes.ModuleName,
+		crudmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -119,6 +123,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		crudchainmoduletypes.ModuleName,
+		crudmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -138,6 +143,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		crudchainmoduletypes.ModuleName,
+		crudmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -158,6 +164,7 @@ var (
 		{Account: ibctransfertypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner}},
 		{Account: ibcfeetypes.ModuleName},
 		{Account: icatypes.ModuleName},
+		{Account: crudmoduletypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner, authtypes.Staking}},
 		// this line is used by starport scaffolding # stargate/app/maccPerms
 	}
 
@@ -296,6 +303,10 @@ var (
 			{
 				Name:   crudchainmoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&crudchainmodulev1.Module{}),
+			},
+			{
+				Name:   crudmoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&crudmodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},
