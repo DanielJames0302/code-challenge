@@ -5,11 +5,11 @@ import "fmt"
 // Implementation A: Iterative Sum (O(n))
 func sum_to_n_a(n int) int {
     sum := 0
-		for i := 1; i <= n; i++ {
-			sum += i
-		}
+    for i := 1; i <= n; i++ {
+        sum += i
+    }
 
-		return sum
+    return sum
 }
 
 // Implementation B: Mathematical Formula (O(1))
