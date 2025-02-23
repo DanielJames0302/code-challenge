@@ -23,6 +23,9 @@ const (
 	Msg_CreateResource_FullMethodName = "/crudchain.crudchain.Msg/CreateResource"
 	Msg_UpdateResource_FullMethodName = "/crudchain.crudchain.Msg/UpdateResource"
 	Msg_DeleteResource_FullMethodName = "/crudchain.crudchain.Msg/DeleteResource"
+	Msg_CreateFilm_FullMethodName     = "/crudchain.crudchain.Msg/CreateFilm"
+	Msg_UpdateFilm_FullMethodName     = "/crudchain.crudchain.Msg/UpdateFilm"
+	Msg_DeleteFilm_FullMethodName     = "/crudchain.crudchain.Msg/DeleteFilm"
 )
 
 // MsgClient is the client API for Msg service.
@@ -35,6 +38,9 @@ type MsgClient interface {
 	CreateResource(ctx context.Context, in *MsgCreateResource, opts ...grpc.CallOption) (*MsgCreateResourceResponse, error)
 	UpdateResource(ctx context.Context, in *MsgUpdateResource, opts ...grpc.CallOption) (*MsgUpdateResourceResponse, error)
 	DeleteResource(ctx context.Context, in *MsgDeleteResource, opts ...grpc.CallOption) (*MsgDeleteResourceResponse, error)
+	CreateFilm(ctx context.Context, in *MsgCreateFilm, opts ...grpc.CallOption) (*MsgCreateFilmResponse, error)
+	UpdateFilm(ctx context.Context, in *MsgUpdateFilm, opts ...grpc.CallOption) (*MsgUpdateFilmResponse, error)
+	DeleteFilm(ctx context.Context, in *MsgDeleteFilm, opts ...grpc.CallOption) (*MsgDeleteFilmResponse, error)
 }
 
 type msgClient struct {
@@ -81,6 +87,33 @@ func (c *msgClient) DeleteResource(ctx context.Context, in *MsgDeleteResource, o
 	return out, nil
 }
 
+func (c *msgClient) CreateFilm(ctx context.Context, in *MsgCreateFilm, opts ...grpc.CallOption) (*MsgCreateFilmResponse, error) {
+	out := new(MsgCreateFilmResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateFilm_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateFilm(ctx context.Context, in *MsgUpdateFilm, opts ...grpc.CallOption) (*MsgUpdateFilmResponse, error) {
+	out := new(MsgUpdateFilmResponse)
+	err := c.cc.Invoke(ctx, Msg_UpdateFilm_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) DeleteFilm(ctx context.Context, in *MsgDeleteFilm, opts ...grpc.CallOption) (*MsgDeleteFilmResponse, error) {
+	out := new(MsgDeleteFilmResponse)
+	err := c.cc.Invoke(ctx, Msg_DeleteFilm_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 // All implementations must embed UnimplementedMsgServer
 // for forward compatibility
@@ -91,6 +124,9 @@ type MsgServer interface {
 	CreateResource(context.Context, *MsgCreateResource) (*MsgCreateResourceResponse, error)
 	UpdateResource(context.Context, *MsgUpdateResource) (*MsgUpdateResourceResponse, error)
 	DeleteResource(context.Context, *MsgDeleteResource) (*MsgDeleteResourceResponse, error)
+	CreateFilm(context.Context, *MsgCreateFilm) (*MsgCreateFilmResponse, error)
+	UpdateFilm(context.Context, *MsgUpdateFilm) (*MsgUpdateFilmResponse, error)
+	DeleteFilm(context.Context, *MsgDeleteFilm) (*MsgDeleteFilmResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
 
@@ -109,6 +145,15 @@ func (UnimplementedMsgServer) UpdateResource(context.Context, *MsgUpdateResource
 }
 func (UnimplementedMsgServer) DeleteResource(context.Context, *MsgDeleteResource) (*MsgDeleteResourceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteResource not implemented")
+}
+func (UnimplementedMsgServer) CreateFilm(context.Context, *MsgCreateFilm) (*MsgCreateFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFilm not implemented")
+}
+func (UnimplementedMsgServer) UpdateFilm(context.Context, *MsgUpdateFilm) (*MsgUpdateFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFilm not implemented")
+}
+func (UnimplementedMsgServer) DeleteFilm(context.Context, *MsgDeleteFilm) (*MsgDeleteFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFilm not implemented")
 }
 func (UnimplementedMsgServer) mustEmbedUnimplementedMsgServer() {}
 
@@ -195,6 +240,60 @@ func _Msg_DeleteResource_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateFilm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateFilm)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateFilm(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateFilm_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateFilm(ctx, req.(*MsgCreateFilm))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateFilm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateFilm)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateFilm(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_UpdateFilm_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateFilm(ctx, req.(*MsgUpdateFilm))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_DeleteFilm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgDeleteFilm)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).DeleteFilm(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_DeleteFilm_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).DeleteFilm(ctx, req.(*MsgDeleteFilm))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Msg_ServiceDesc is the grpc.ServiceDesc for Msg service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -217,6 +316,18 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteResource",
 			Handler:    _Msg_DeleteResource_Handler,
+		},
+		{
+			MethodName: "CreateFilm",
+			Handler:    _Msg_CreateFilm_Handler,
+		},
+		{
+			MethodName: "UpdateFilm",
+			Handler:    _Msg_UpdateFilm_Handler,
+		},
+		{
+			MethodName: "DeleteFilm",
+			Handler:    _Msg_DeleteFilm_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

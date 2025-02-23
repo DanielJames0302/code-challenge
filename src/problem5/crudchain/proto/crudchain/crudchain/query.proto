@@ -8,6 +8,7 @@ import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "crudchain/crudchain/params.proto";
 import "crudchain/crudchain/resource.proto";
+import "crudchain/crudchain/film.proto";
 
 option go_package = "crudchain/x/crudchain/types";
 
@@ -27,6 +28,40 @@ service Query {
   }
   rpc ResourceAll (QueryAllResourceRequest) returns (QueryAllResourceResponse) {
     option (google.api.http).get = "/crudchain/crudchain/resource";
+  
+  }
+  
+  // Queries a list of ShowResourceByName items.
+  rpc ShowResourceByName (QueryShowResourceByNameRequest) returns (QueryShowResourceByNameResponse) {
+    option (google.api.http).get = "/crudchain/crudchain/show_resource_by_name/{name}";
+  
+  }
+  
+  // Queries a list of Film items.
+  rpc Film    (QueryGetFilmRequest) returns (QueryGetFilmResponse) {
+    option (google.api.http).get = "/crudchain/crudchain/film/{id}";
+  
+  }
+  rpc FilmAll (QueryAllFilmRequest) returns (QueryAllFilmResponse) {
+    option (google.api.http).get = "/crudchain/crudchain/film";
+  
+  }
+  
+  // Queries a list of ShowFilmByGenre items.
+  rpc ShowFilmByGenre (QueryShowFilmByGenreRequest) returns (QueryShowFilmByGenreResponse) {
+    option (google.api.http).get = "/crudchain/crudchain/show_film_by_genre/{gere}";
+  
+  }
+  
+  // Queries a list of ShowFilmGenre items.
+  rpc ShowFilmGenre (QueryShowFilmGenreRequest) returns (QueryShowFilmGenreResponse) {
+    option (google.api.http).get = "/crudchain/crudchain/show_film_genre/{genre}";
+  
+  }
+  
+  // Queries a list of ShowFilmName items.
+  rpc ShowFilmName (QueryShowFilmNameRequest) returns (QueryShowFilmNameResponse) {
+    option (google.api.http).get = "/crudchain/crudchain/show_film_name/{name}";
   
   }
 }
@@ -55,5 +90,54 @@ message QueryAllResourceRequest {
 message QueryAllResourceResponse {
   repeated Resource                               Resource   = 1 [(gogoproto.nullable) = false];
            cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryShowResourceByNameRequest {
+  string name = 1;
+}
+
+message QueryShowResourceByNameResponse {
+  Resource resource = 1;
+}
+
+message QueryGetFilmRequest {
+  uint64 id = 1;
+}
+
+message QueryGetFilmResponse {
+  Film Film = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllFilmRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllFilmResponse {
+  repeated Film                                   Film       = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryShowFilmByGenreRequest {
+  string gere = 1;
+}
+
+message QueryShowFilmByGenreResponse {
+  Film film = 1;
+}
+
+message QueryShowFilmGenreRequest {
+  string genre = 1;
+}
+
+message QueryShowFilmGenreResponse {
+  repeated Film films = 1;
+}
+
+message QueryShowFilmNameRequest {
+  string name = 1;
+}
+
+message QueryShowFilmNameResponse {
+  repeated Film films = 1;
 }
 

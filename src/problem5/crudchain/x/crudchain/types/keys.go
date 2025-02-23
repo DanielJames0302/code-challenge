@@ -23,3 +23,8 @@ const (
 	ResourceKey      = "Resource/value/"
 	ResourceCountKey = "Resource/count/"
 )
+
+const (
+	FilmKey      = "Film/value/"
+	FilmCountKey = "Film/count/"
+)

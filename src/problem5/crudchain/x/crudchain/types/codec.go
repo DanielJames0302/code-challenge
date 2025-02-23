@@ -13,6 +13,11 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 		&MsgUpdateResource{},
 		&MsgDeleteResource{},
 	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgCreateFilm{},
+		&MsgUpdateFilm{},
+		&MsgDeleteFilm{},
+	)
 	// this line is used by starport scaffolding # 3
 
 	registry.RegisterImplementations((*sdk.Msg)(nil),

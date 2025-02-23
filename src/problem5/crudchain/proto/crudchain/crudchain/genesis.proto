@@ -6,6 +6,7 @@ import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 import "crudchain/crudchain/params.proto";
 import "crudchain/crudchain/resource.proto";
+import "crudchain/crudchain/film.proto";
 
 option go_package = "crudchain/x/crudchain/types";
 
@@ -16,5 +17,7 @@ message GenesisState {
            Params   params        = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
   repeated Resource resourceList  = 2 [(gogoproto.nullable) = false] ;
            uint64   resourceCount = 3;
+  repeated Film     filmList      = 4 [(gogoproto.nullable) = false] ;
+           uint64   filmCount     = 5;
 }
 

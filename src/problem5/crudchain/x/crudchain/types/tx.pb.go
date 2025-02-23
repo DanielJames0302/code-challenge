@@ -420,6 +420,318 @@ func (m *MsgDeleteResourceResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgDeleteResourceResponse proto.InternalMessageInfo
 
+type MsgCreateFilm struct {
+	Creator     string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Name        string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Genre       string `protobuf:"bytes,4,opt,name=genre,proto3" json:"genre,omitempty"`
+}
+
+func (m *MsgCreateFilm) Reset()         { *m = MsgCreateFilm{} }
+func (m *MsgCreateFilm) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateFilm) ProtoMessage()    {}
+func (*MsgCreateFilm) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b5443ad0be294f9d, []int{8}
+}
+func (m *MsgCreateFilm) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateFilm) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateFilm.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateFilm) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateFilm.Merge(m, src)
+}
+func (m *MsgCreateFilm) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateFilm) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateFilm.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateFilm proto.InternalMessageInfo
+
+func (m *MsgCreateFilm) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgCreateFilm) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *MsgCreateFilm) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+func (m *MsgCreateFilm) GetGenre() string {
+	if m != nil {
+		return m.Genre
+	}
+	return ""
+}
+
+type MsgCreateFilmResponse struct {
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *MsgCreateFilmResponse) Reset()         { *m = MsgCreateFilmResponse{} }
+func (m *MsgCreateFilmResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateFilmResponse) ProtoMessage()    {}
+func (*MsgCreateFilmResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b5443ad0be294f9d, []int{9}
+}
+func (m *MsgCreateFilmResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateFilmResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateFilmResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateFilmResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateFilmResponse.Merge(m, src)
+}
+func (m *MsgCreateFilmResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateFilmResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateFilmResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateFilmResponse proto.InternalMessageInfo
+
+func (m *MsgCreateFilmResponse) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type MsgUpdateFilm struct {
+	Creator     string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id          uint64 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Description string `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Genre       string `protobuf:"bytes,5,opt,name=genre,proto3" json:"genre,omitempty"`
+}
+
+func (m *MsgUpdateFilm) Reset()         { *m = MsgUpdateFilm{} }
+func (m *MsgUpdateFilm) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateFilm) ProtoMessage()    {}
+func (*MsgUpdateFilm) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b5443ad0be294f9d, []int{10}
+}
+func (m *MsgUpdateFilm) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateFilm) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateFilm.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateFilm) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateFilm.Merge(m, src)
+}
+func (m *MsgUpdateFilm) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateFilm) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateFilm.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateFilm proto.InternalMessageInfo
+
+func (m *MsgUpdateFilm) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgUpdateFilm) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+func (m *MsgUpdateFilm) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *MsgUpdateFilm) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+func (m *MsgUpdateFilm) GetGenre() string {
+	if m != nil {
+		return m.Genre
+	}
+	return ""
+}
+
+type MsgUpdateFilmResponse struct {
+}
+
+func (m *MsgUpdateFilmResponse) Reset()         { *m = MsgUpdateFilmResponse{} }
+func (m *MsgUpdateFilmResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateFilmResponse) ProtoMessage()    {}
+func (*MsgUpdateFilmResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b5443ad0be294f9d, []int{11}
+}
+func (m *MsgUpdateFilmResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateFilmResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateFilmResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateFilmResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateFilmResponse.Merge(m, src)
+}
+func (m *MsgUpdateFilmResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateFilmResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateFilmResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateFilmResponse proto.InternalMessageInfo
+
+type MsgDeleteFilm struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id      uint64 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *MsgDeleteFilm) Reset()         { *m = MsgDeleteFilm{} }
+func (m *MsgDeleteFilm) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteFilm) ProtoMessage()    {}
+func (*MsgDeleteFilm) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b5443ad0be294f9d, []int{12}
+}
+func (m *MsgDeleteFilm) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteFilm) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteFilm.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteFilm) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteFilm.Merge(m, src)
+}
+func (m *MsgDeleteFilm) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteFilm) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteFilm.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteFilm proto.InternalMessageInfo
+
+func (m *MsgDeleteFilm) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgDeleteFilm) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type MsgDeleteFilmResponse struct {
+}
+
+func (m *MsgDeleteFilmResponse) Reset()         { *m = MsgDeleteFilmResponse{} }
+func (m *MsgDeleteFilmResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteFilmResponse) ProtoMessage()    {}
+func (*MsgDeleteFilmResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b5443ad0be294f9d, []int{13}
+}
+func (m *MsgDeleteFilmResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteFilmResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteFilmResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteFilmResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteFilmResponse.Merge(m, src)
+}
+func (m *MsgDeleteFilmResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteFilmResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteFilmResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteFilmResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgUpdateParams)(nil), "crudchain.crudchain.MsgUpdateParams")
 	proto.RegisterType((*MsgUpdateParamsResponse)(nil), "crudchain.crudchain.MsgUpdateParamsResponse")
@@ -429,45 +741,58 @@ func init() {
 	proto.RegisterType((*MsgUpdateResourceResponse)(nil), "crudchain.crudchain.MsgUpdateResourceResponse")
 	proto.RegisterType((*MsgDeleteResource)(nil), "crudchain.crudchain.MsgDeleteResource")
 	proto.RegisterType((*MsgDeleteResourceResponse)(nil), "crudchain.crudchain.MsgDeleteResourceResponse")
+	proto.RegisterType((*MsgCreateFilm)(nil), "crudchain.crudchain.MsgCreateFilm")
+	proto.RegisterType((*MsgCreateFilmResponse)(nil), "crudchain.crudchain.MsgCreateFilmResponse")
+	proto.RegisterType((*MsgUpdateFilm)(nil), "crudchain.crudchain.MsgUpdateFilm")
+	proto.RegisterType((*MsgUpdateFilmResponse)(nil), "crudchain.crudchain.MsgUpdateFilmResponse")
+	proto.RegisterType((*MsgDeleteFilm)(nil), "crudchain.crudchain.MsgDeleteFilm")
+	proto.RegisterType((*MsgDeleteFilmResponse)(nil), "crudchain.crudchain.MsgDeleteFilmResponse")
 }
 
 func init() { proto.RegisterFile("crudchain/crudchain/tx.proto", fileDescriptor_b5443ad0be294f9d) }
 
 var fileDescriptor_b5443ad0be294f9d = []byte{
-	// 519 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x94, 0x41, 0x8b, 0xd3, 0x40,
-	0x14, 0xc7, 0x3b, 0x6d, 0x5d, 0xe9, 0xec, 0xb2, 0xb2, 0xe3, 0xc2, 0xa6, 0xa9, 0xc4, 0x12, 0x74,
-	0x59, 0xaa, 0x26, 0xb8, 0xa2, 0xc8, 0x1e, 0x04, 0xab, 0x37, 0x29, 0x48, 0xc4, 0x8b, 0x17, 0xc9,
-	0x26, 0x43, 0x1a, 0x30, 0x99, 0x38, 0x33, 0x95, 0xdd, 0x9b, 0x7a, 0xf4, 0xe4, 0xc7, 0xf0, 0x24,
-	0x3d, 0xf8, 0x0d, 0xbc, 0xec, 0x71, 0xf1, 0xe4, 0x49, 0xa4, 0x3d, 0xf4, 0x6b, 0x48, 0x66, 0x92,
-	0xb4, 0x89, 0x13, 0xb7, 0x78, 0x69, 0x67, 0xde, 0xfb, 0xbf, 0xf9, 0xff, 0x5e, 0xde, 0x24, 0xf0,
-	0x9a, 0x47, 0x27, 0xbe, 0x37, 0x76, 0xc3, 0xd8, 0x5e, 0xae, 0xf8, 0x89, 0x95, 0x50, 0xc2, 0x09,
-	0xba, 0x5a, 0xc4, 0xac, 0x62, 0xa5, 0xef, 0xb8, 0x51, 0x18, 0x13, 0x5b, 0xfc, 0x4a, 0x9d, 0xbe,
-	0xe7, 0x11, 0x16, 0x11, 0x66, 0x47, 0x2c, 0xb0, 0xdf, 0xdd, 0x4d, 0xff, 0xb2, 0x44, 0x57, 0x26,
-	0x5e, 0x8b, 0x9d, 0x2d, 0x37, 0x59, 0x6a, 0x37, 0x20, 0x01, 0x91, 0xf1, 0x74, 0x95, 0x45, 0xfb,
-	0x2a, 0x9e, 0xc4, 0xa5, 0x6e, 0x94, 0xd7, 0x99, 0x2a, 0x05, 0xc5, 0x8c, 0x4c, 0xa8, 0x87, 0xa5,
-	0xc6, 0xfc, 0x0e, 0xe0, 0x95, 0x11, 0x0b, 0x5e, 0x26, 0xbe, 0xcb, 0xf1, 0x73, 0x51, 0x8d, 0x1e,
-	0xc0, 0x8e, 0x3b, 0xe1, 0x63, 0x42, 0x43, 0x7e, 0xaa, 0x81, 0x3e, 0x38, 0xe8, 0x0c, 0xb5, 0x1f,
-	0xdf, 0xee, 0xec, 0x66, 0x50, 0x8f, 0x7d, 0x9f, 0x62, 0xc6, 0x5e, 0x70, 0x1a, 0xc6, 0x81, 0xb3,
-	0x94, 0xa2, 0x47, 0x70, 0x43, 0xfa, 0x6b, 0xcd, 0x3e, 0x38, 0xd8, 0x3c, 0xec, 0x59, 0x8a, 0x87,
-	0x62, 0x49, 0x93, 0x61, 0xe7, 0xec, 0xd7, 0xf5, 0xc6, 0x97, 0xc5, 0x74, 0x00, 0x9c, 0xac, 0xea,
-	0xe8, 0xe1, 0xc7, 0xc5, 0x74, 0xb0, 0x3c, 0xef, 0xd3, 0x62, 0x3a, 0xb8, 0xb9, 0x04, 0x3f, 0x59,
-	0x69, 0xa2, 0x42, 0x6c, 0x76, 0xe1, 0x5e, 0x25, 0xe4, 0x60, 0x96, 0x90, 0x98, 0x61, 0xf3, 0x2d,
-	0xdc, 0x19, 0xb1, 0xe0, 0x09, 0xc5, 0x2e, 0xc7, 0x4e, 0xd6, 0x3b, 0xd2, 0xe0, 0x65, 0x2f, 0x8d,
-	0x10, 0x2a, 0xfb, 0x73, 0xf2, 0x2d, 0x42, 0xb0, 0x1d, 0xbb, 0x11, 0x16, 0x1d, 0x74, 0x1c, 0xb1,
-	0x46, 0x7d, 0xb8, 0xe9, 0x63, 0xe6, 0xd1, 0x30, 0xe1, 0x21, 0x89, 0xb5, 0x96, 0x48, 0xad, 0x86,
-	0x8e, 0xb6, 0x52, 0xf2, 0xfc, 0x0c, 0xf3, 0x16, 0xec, 0xfe, 0x65, 0x99, 0xf3, 0xa0, 0x6d, 0xd8,
-	0x0c, 0x7d, 0xe1, 0xda, 0x76, 0x9a, 0xa1, 0x6f, 0x7e, 0x00, 0x02, 0x50, 0xb2, 0xaf, 0x01, 0x28,
-	0xeb, 0x9b, 0x79, 0x7d, 0x01, 0xdc, 0xaa, 0x07, 0x6e, 0x5f, 0x04, 0xdc, 0x13, 0xc0, 0x65, 0x84,
-	0xe2, 0x01, 0x3e, 0x13, 0x7c, 0x4f, 0xf1, 0x1b, 0xfc, 0x3f, 0x7c, 0x4a, 0xa7, 0xf2, 0x61, 0xb9,
-	0xd3, 0xe1, 0xd7, 0x16, 0x6c, 0x8d, 0x58, 0x80, 0x8e, 0xe1, 0x56, 0xe9, 0x3e, 0xde, 0x50, 0xde,
-	0xa3, 0xca, 0xc0, 0xf5, 0xdb, 0xeb, 0xa8, 0x8a, 0x31, 0x8c, 0xe1, 0x76, 0xe5, 0x4e, 0xec, 0xd7,
-	0xd5, 0x97, 0x75, 0xba, 0xb5, 0x9e, 0x6e, 0xd5, 0xa9, 0x32, 0xdc, 0xfd, 0x7f, 0x93, 0x5e, 0xec,
-	0xa4, 0x9e, 0x54, 0xea, 0x54, 0x19, 0x53, 0xad, 0x53, 0x59, 0x57, 0xef, 0xa4, 0x9e, 0x94, 0x7e,
-	0xe9, 0x7d, 0xfa, 0xe2, 0x0e, 0xef, 0x9f, 0xcd, 0x0c, 0x70, 0x3e, 0x33, 0xc0, 0xef, 0x99, 0x01,
-	0x3e, 0xcf, 0x8d, 0xc6, 0xf9, 0xdc, 0x68, 0xfc, 0x9c, 0x1b, 0x8d, 0x57, 0x3d, 0xf5, 0x7b, 0xcb,
-	0x4f, 0x13, 0xcc, 0x8e, 0x37, 0xc4, 0xa7, 0xe7, 0xde, 0x9f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x6b,
-	0x10, 0xdf, 0x10, 0x52, 0x05, 0x00, 0x00,
+	// 637 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x95, 0x4d, 0x8b, 0xd3, 0x40,
+	0x18, 0xc7, 0x9b, 0xbe, 0xac, 0x74, 0x76, 0x5d, 0xd9, 0x58, 0x69, 0x9b, 0x4a, 0x2c, 0x41, 0xd7,
+	0xa5, 0x6a, 0x8b, 0x2b, 0x8a, 0xec, 0x41, 0xb0, 0x8a, 0x1e, 0xa4, 0x20, 0x11, 0x2f, 0x22, 0x48,
+	0x36, 0x19, 0xd3, 0x40, 0x93, 0x89, 0x33, 0xa9, 0xec, 0xde, 0x7c, 0xb9, 0x79, 0x12, 0xfc, 0x12,
+	0x1e, 0x7b, 0xf0, 0x1b, 0x78, 0xe9, 0x71, 0xf1, 0xe4, 0x49, 0xa4, 0x3d, 0xf4, 0x6b, 0x48, 0x66,
+	0xf2, 0xde, 0x24, 0xad, 0xcb, 0x5e, 0xda, 0x99, 0x67, 0xfe, 0xf3, 0xfc, 0x7f, 0xf3, 0x4c, 0x9e,
+	0x04, 0x5c, 0x56, 0xf1, 0x58, 0x53, 0x87, 0x8a, 0x61, 0xf5, 0xc2, 0x91, 0x73, 0xd4, 0xb5, 0x31,
+	0x72, 0x10, 0x7f, 0x31, 0x88, 0x75, 0x83, 0x91, 0xb0, 0xa3, 0x98, 0x86, 0x85, 0x7a, 0xf4, 0x97,
+	0xe9, 0x84, 0xba, 0x8a, 0x88, 0x89, 0x48, 0xcf, 0x24, 0x7a, 0xef, 0xfd, 0x6d, 0xf7, 0xcf, 0x5b,
+	0x68, 0xb2, 0x85, 0x37, 0x74, 0xd6, 0x63, 0x13, 0x6f, 0xa9, 0xa6, 0x23, 0x1d, 0xb1, 0xb8, 0x3b,
+	0xf2, 0xa2, 0xed, 0x34, 0x1e, 0x5b, 0xc1, 0x8a, 0xe9, 0xef, 0x93, 0xd2, 0x14, 0x18, 0x12, 0x34,
+	0xc6, 0x2a, 0xf4, 0x34, 0x62, 0x9a, 0xe6, 0xad, 0x31, 0x32, 0xd9, 0xba, 0xf4, 0x93, 0x03, 0x17,
+	0x06, 0x44, 0x7f, 0x69, 0x6b, 0x8a, 0x03, 0x9f, 0xd3, 0xec, 0xfc, 0x3d, 0x50, 0x55, 0xc6, 0xce,
+	0x10, 0x61, 0xc3, 0x39, 0x6e, 0x70, 0x6d, 0x6e, 0xaf, 0xda, 0x6f, 0xfc, 0xfa, 0x71, 0xab, 0xe6,
+	0x41, 0x3f, 0xd4, 0x34, 0x0c, 0x09, 0x79, 0xe1, 0x60, 0xc3, 0xd2, 0xe5, 0x50, 0xca, 0x3f, 0x00,
+	0x1b, 0x8c, 0xaf, 0x51, 0x6c, 0x73, 0x7b, 0x9b, 0xfb, 0xad, 0x6e, 0x4a, 0xd1, 0xba, 0xcc, 0xa4,
+	0x5f, 0x9d, 0xfe, 0xb9, 0x52, 0xf8, 0xbe, 0x98, 0x74, 0x38, 0xd9, 0xdb, 0x75, 0x70, 0xff, 0xd3,
+	0x62, 0xd2, 0x09, 0xf3, 0x7d, 0x59, 0x4c, 0x3a, 0xd7, 0x42, 0xe8, 0xa3, 0xc8, 0x01, 0x12, 0xc4,
+	0x52, 0x13, 0xd4, 0x13, 0x21, 0x19, 0x12, 0x1b, 0x59, 0x04, 0x4a, 0xef, 0xc0, 0xce, 0x80, 0xe8,
+	0x8f, 0x30, 0x54, 0x1c, 0x28, 0x7b, 0xb5, 0xe1, 0x1b, 0xe0, 0x9c, 0xea, 0x46, 0x10, 0x66, 0xe7,
+	0x93, 0xfd, 0x29, 0xcf, 0x83, 0xb2, 0xa5, 0x98, 0x90, 0x9e, 0xa0, 0x2a, 0xd3, 0x31, 0xdf, 0x06,
+	0x9b, 0x1a, 0x24, 0x2a, 0x36, 0x6c, 0xc7, 0x40, 0x56, 0xa3, 0x44, 0x97, 0xa2, 0xa1, 0x83, 0x2d,
+	0x97, 0xdc, 0xcf, 0x21, 0xdd, 0x00, 0xcd, 0x25, 0x4b, 0x9f, 0x87, 0xdf, 0x06, 0x45, 0x43, 0xa3,
+	0xae, 0x65, 0xb9, 0x68, 0x68, 0xd2, 0x47, 0x8e, 0x02, 0x32, 0xf6, 0x35, 0x00, 0xd9, 0xfe, 0xa2,
+	0xbf, 0x3f, 0x00, 0x2e, 0x65, 0x03, 0x97, 0x57, 0x01, 0xb7, 0x28, 0x70, 0x1c, 0x21, 0x28, 0xe0,
+	0x33, 0xca, 0xf7, 0x18, 0x8e, 0xe0, 0x69, 0xf8, 0x52, 0x9d, 0xe2, 0xc9, 0x02, 0xa7, 0xcf, 0x1c,
+	0x38, 0x1f, 0x14, 0xee, 0x89, 0x31, 0x32, 0xcf, 0xfa, 0x9e, 0xf8, 0x1a, 0xa8, 0xe8, 0xd0, 0xc2,
+	0xd0, 0x2b, 0x09, 0x9b, 0x24, 0x10, 0xaf, 0x83, 0x4b, 0x31, 0x88, 0xcc, 0x9b, 0xfb, 0xc6, 0x70,
+	0x59, 0xd9, 0x56, 0xe0, 0x9e, 0xc9, 0xad, 0x85, 0xf8, 0x95, 0x6c, 0xfc, 0x3a, 0xc5, 0x0f, 0xa1,
+	0x82, 0xea, 0x3e, 0xa5, 0xb4, 0xac, 0xf4, 0xff, 0x47, 0x9b, 0xea, 0x10, 0x26, 0xf2, 0x1d, 0xf6,
+	0xa7, 0x15, 0x50, 0x1a, 0x10, 0x9d, 0x3f, 0x04, 0x5b, 0xb1, 0xf7, 0xc9, 0xd5, 0xd4, 0xf7, 0x40,
+	0xa2, 0x61, 0x85, 0x9b, 0xeb, 0xa8, 0x82, 0xcb, 0x18, 0x82, 0xed, 0x44, 0x4f, 0xef, 0x66, 0xed,
+	0x8f, 0xeb, 0x84, 0xee, 0x7a, 0xba, 0xa8, 0x53, 0xa2, 0x39, 0x77, 0xf3, 0x49, 0x57, 0x3b, 0xa5,
+	0x77, 0x9a, 0xeb, 0x94, 0x68, 0xb3, 0x4c, 0xa7, 0xb8, 0x2e, 0xdb, 0x29, 0xbd, 0xd3, 0xf8, 0xd7,
+	0x00, 0x44, 0xba, 0x4c, 0xca, 0xaf, 0x88, 0xab, 0x11, 0x3a, 0xab, 0x35, 0xd1, 0xec, 0x91, 0xa6,
+	0x90, 0xf2, 0xab, 0x90, 0x9f, 0x7d, 0xf9, 0x39, 0x76, 0xb3, 0x47, 0x1e, 0x62, 0x29, 0xff, 0xe4,
+	0xf9, 0xd9, 0x97, 0x9f, 0x61, 0xa1, 0xf2, 0xc1, 0xfd, 0x24, 0xf5, 0xef, 0x4e, 0x67, 0x22, 0x77,
+	0x32, 0x13, 0xb9, 0xbf, 0x33, 0x91, 0xfb, 0x3a, 0x17, 0x0b, 0x27, 0x73, 0xb1, 0xf0, 0x7b, 0x2e,
+	0x16, 0x5e, 0xb5, 0xd2, 0xbf, 0x48, 0xce, 0xb1, 0x0d, 0xc9, 0xe1, 0x06, 0xfd, 0xa8, 0xde, 0xf9,
+	0x17, 0x00, 0x00, 0xff, 0xff, 0xc1, 0xe4, 0x9f, 0x73, 0x4c, 0x08, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -488,6 +813,9 @@ type MsgClient interface {
 	CreateResource(ctx context.Context, in *MsgCreateResource, opts ...grpc.CallOption) (*MsgCreateResourceResponse, error)
 	UpdateResource(ctx context.Context, in *MsgUpdateResource, opts ...grpc.CallOption) (*MsgUpdateResourceResponse, error)
 	DeleteResource(ctx context.Context, in *MsgDeleteResource, opts ...grpc.CallOption) (*MsgDeleteResourceResponse, error)
+	CreateFilm(ctx context.Context, in *MsgCreateFilm, opts ...grpc.CallOption) (*MsgCreateFilmResponse, error)
+	UpdateFilm(ctx context.Context, in *MsgUpdateFilm, opts ...grpc.CallOption) (*MsgUpdateFilmResponse, error)
+	DeleteFilm(ctx context.Context, in *MsgDeleteFilm, opts ...grpc.CallOption) (*MsgDeleteFilmResponse, error)
 }
 
 type msgClient struct {
@@ -534,6 +862,33 @@ func (c *msgClient) DeleteResource(ctx context.Context, in *MsgDeleteResource, o
 	return out, nil
 }
 
+func (c *msgClient) CreateFilm(ctx context.Context, in *MsgCreateFilm, opts ...grpc.CallOption) (*MsgCreateFilmResponse, error) {
+	out := new(MsgCreateFilmResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Msg/CreateFilm", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateFilm(ctx context.Context, in *MsgUpdateFilm, opts ...grpc.CallOption) (*MsgUpdateFilmResponse, error) {
+	out := new(MsgUpdateFilmResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Msg/UpdateFilm", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) DeleteFilm(ctx context.Context, in *MsgDeleteFilm, opts ...grpc.CallOption) (*MsgDeleteFilmResponse, error) {
+	out := new(MsgDeleteFilmResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Msg/DeleteFilm", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
@@ -542,6 +897,9 @@ type MsgServer interface {
 	CreateResource(context.Context, *MsgCreateResource) (*MsgCreateResourceResponse, error)
 	UpdateResource(context.Context, *MsgUpdateResource) (*MsgUpdateResourceResponse, error)
 	DeleteResource(context.Context, *MsgDeleteResource) (*MsgDeleteResourceResponse, error)
+	CreateFilm(context.Context, *MsgCreateFilm) (*MsgCreateFilmResponse, error)
+	UpdateFilm(context.Context, *MsgUpdateFilm) (*MsgUpdateFilmResponse, error)
+	DeleteFilm(context.Context, *MsgDeleteFilm) (*MsgDeleteFilmResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -559,6 +917,15 @@ func (*UnimplementedMsgServer) UpdateResource(ctx context.Context, req *MsgUpdat
 }
 func (*UnimplementedMsgServer) DeleteResource(ctx context.Context, req *MsgDeleteResource) (*MsgDeleteResourceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteResource not implemented")
+}
+func (*UnimplementedMsgServer) CreateFilm(ctx context.Context, req *MsgCreateFilm) (*MsgCreateFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFilm not implemented")
+}
+func (*UnimplementedMsgServer) UpdateFilm(ctx context.Context, req *MsgUpdateFilm) (*MsgUpdateFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFilm not implemented")
+}
+func (*UnimplementedMsgServer) DeleteFilm(ctx context.Context, req *MsgDeleteFilm) (*MsgDeleteFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFilm not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -637,6 +1004,60 @@ func _Msg_DeleteResource_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateFilm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateFilm)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateFilm(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Msg/CreateFilm",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateFilm(ctx, req.(*MsgCreateFilm))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateFilm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateFilm)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateFilm(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Msg/UpdateFilm",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateFilm(ctx, req.(*MsgUpdateFilm))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_DeleteFilm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgDeleteFilm)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).DeleteFilm(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Msg/DeleteFilm",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).DeleteFilm(ctx, req.(*MsgDeleteFilm))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Msg_serviceDesc = _Msg_serviceDesc
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "crudchain.crudchain.Msg",
@@ -657,6 +1078,18 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteResource",
 			Handler:    _Msg_DeleteResource_Handler,
+		},
+		{
+			MethodName: "CreateFilm",
+			Handler:    _Msg_CreateFilm_Handler,
+		},
+		{
+			MethodName: "UpdateFilm",
+			Handler:    _Msg_UpdateFilm_Handler,
+		},
+		{
+			MethodName: "DeleteFilm",
+			Handler:    _Msg_DeleteFilm_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -928,6 +1361,222 @@ func (m *MsgDeleteResourceResponse) MarshalToSizedBuffer(dAtA []byte) (int, erro
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgCreateFilm) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateFilm) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateFilm) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Genre) > 0 {
+		i -= len(m.Genre)
+		copy(dAtA[i:], m.Genre)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Genre)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Description) > 0 {
+		i -= len(m.Description)
+		copy(dAtA[i:], m.Description)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Description)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgCreateFilmResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateFilmResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateFilmResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateFilm) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateFilm) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateFilm) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Genre) > 0 {
+		i -= len(m.Genre)
+		copy(dAtA[i:], m.Genre)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Genre)))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if len(m.Description) > 0 {
+		i -= len(m.Description)
+		copy(dAtA[i:], m.Description)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Description)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if m.Id != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateFilmResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateFilmResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateFilmResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteFilm) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteFilm) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteFilm) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteFilmResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteFilmResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteFilmResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -1046,6 +1695,105 @@ func (m *MsgDeleteResource) Size() (n int) {
 }
 
 func (m *MsgDeleteResourceResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgCreateFilm) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Description)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Genre)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgCreateFilmResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Id != 0 {
+		n += 1 + sovTx(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *MsgUpdateFilm) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Id != 0 {
+		n += 1 + sovTx(uint64(m.Id))
+	}
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Description)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Genre)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgUpdateFilmResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgDeleteFilm) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Id != 0 {
+		n += 1 + sovTx(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *MsgDeleteFilmResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -1783,6 +2531,651 @@ func (m *MsgDeleteResourceResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgDeleteResourceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateFilm) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateFilm: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateFilm: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Description", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Description = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Genre", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Genre = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateFilmResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateFilmResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateFilmResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateFilm) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateFilm: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateFilm: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Description", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Description = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Genre", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Genre = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateFilmResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateFilmResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateFilmResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteFilm) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteFilm: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteFilm: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteFilmResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteFilmResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteFilmResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:

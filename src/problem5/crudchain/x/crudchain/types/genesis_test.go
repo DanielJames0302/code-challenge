@@ -32,6 +32,15 @@ func TestGenesisState_Validate(t *testing.T) {
 					},
 				},
 				ResourceCount: 2,
+				FilmList: []types.Film{
+					{
+						Id: 0,
+					},
+					{
+						Id: 1,
+					},
+				},
+				FilmCount: 2,
 				// this line is used by starport scaffolding # types/genesis/validField
 			},
 			valid: true,
@@ -59,6 +68,32 @@ func TestGenesisState_Validate(t *testing.T) {
 					},
 				},
 				ResourceCount: 0,
+			},
+			valid: false,
+		},
+		{
+			desc: "duplicated film",
+			genState: &types.GenesisState{
+				FilmList: []types.Film{
+					{
+						Id: 0,
+					},
+					{
+						Id: 0,
+					},
+				},
+			},
+			valid: false,
+		},
+		{
+			desc: "invalid film count",
+			genState: &types.GenesisState{
+				FilmList: []types.Film{
+					{
+						Id: 1,
+					},
+				},
+				FilmCount: 0,
 			},
 			valid: false,
 		},

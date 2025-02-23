@@ -28,6 +28,45 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Shows a resource by id",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
 				},
+				{
+					RpcMethod:      "ShowResourceByName",
+					Use:            "show-resource-by-name [name]",
+					Short:          "Query show-resource-by-name",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "name"}},
+				},
+
+				{
+					RpcMethod: "FilmAll",
+					Use:       "list-film",
+					Short:     "List all film",
+				},
+				{
+					RpcMethod:      "Film",
+					Use:            "show-film [id]",
+					Short:          "Shows a film by id",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "ShowFilmByGenre",
+					Use:            "show-film-by-genre [gere]",
+					Short:          "Query show-film-by-genre",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "gere"}},
+				},
+
+				{
+					RpcMethod:      "ShowFilmGenre",
+					Use:            "show-film-genre [genre]",
+					Short:          "Query show-film-genre",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "genre"}},
+				},
+
+				{
+					RpcMethod:      "ShowFilmName",
+					Use:            "show-film-name [name]",
+					Short:          "Query show-film-name",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "name"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -55,6 +94,24 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod:      "DeleteResource",
 					Use:            "delete-resource [id]",
 					Short:          "Delete resource",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "CreateFilm",
+					Use:            "create-film [name] [description] [genre]",
+					Short:          "Create film",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "name"}, {ProtoField: "description"}, {ProtoField: "genre"}},
+				},
+				{
+					RpcMethod:      "UpdateFilm",
+					Use:            "update-film [id] [name] [description] [genre]",
+					Short:          "Update film",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "name"}, {ProtoField: "description"}, {ProtoField: "genre"}},
+				},
+				{
+					RpcMethod:      "DeleteFilm",
+					Use:            "delete-film [id]",
+					Short:          "Delete film",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx

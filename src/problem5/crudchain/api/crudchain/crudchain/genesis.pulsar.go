@@ -65,11 +65,64 @@ func (x *_GenesisState_2_list) IsValid() bool {
 	return x.list != nil
 }
 
+var _ protoreflect.List = (*_GenesisState_4_list)(nil)
+
+type _GenesisState_4_list struct {
+	list *[]*Film
+}
+
+func (x *_GenesisState_4_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_4_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Film)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_4_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Film)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_4_list) AppendMutable() protoreflect.Value {
+	v := new(Film)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_4_list) NewElement() protoreflect.Value {
+	v := new(Film)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
 	md_GenesisState               protoreflect.MessageDescriptor
 	fd_GenesisState_params        protoreflect.FieldDescriptor
 	fd_GenesisState_resourceList  protoreflect.FieldDescriptor
 	fd_GenesisState_resourceCount protoreflect.FieldDescriptor
+	fd_GenesisState_filmList      protoreflect.FieldDescriptor
+	fd_GenesisState_filmCount     protoreflect.FieldDescriptor
 )
 
 func init() {
@@ -78,6 +131,8 @@ func init() {
 	fd_GenesisState_params = md_GenesisState.Fields().ByName("params")
 	fd_GenesisState_resourceList = md_GenesisState.Fields().ByName("resourceList")
 	fd_GenesisState_resourceCount = md_GenesisState.Fields().ByName("resourceCount")
+	fd_GenesisState_filmList = md_GenesisState.Fields().ByName("filmList")
+	fd_GenesisState_filmCount = md_GenesisState.Fields().ByName("filmCount")
 }
 
 var _ protoreflect.Message = (*fastReflection_GenesisState)(nil)
@@ -163,6 +218,18 @@ func (x *fastReflection_GenesisState) Range(f func(protoreflect.FieldDescriptor,
 			return
 		}
 	}
+	if len(x.FilmList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_4_list{list: &x.FilmList})
+		if !f(fd_GenesisState_filmList, value) {
+			return
+		}
+	}
+	if x.FilmCount != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.FilmCount)
+		if !f(fd_GenesisState_filmCount, value) {
+			return
+		}
+	}
 }
 
 // Has reports whether a field is populated.
@@ -184,6 +251,10 @@ func (x *fastReflection_GenesisState) Has(fd protoreflect.FieldDescriptor) bool 
 		return len(x.ResourceList) != 0
 	case "crudchain.crudchain.GenesisState.resourceCount":
 		return x.ResourceCount != uint64(0)
+	case "crudchain.crudchain.GenesisState.filmList":
+		return len(x.FilmList) != 0
+	case "crudchain.crudchain.GenesisState.filmCount":
+		return x.FilmCount != uint64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: crudchain.crudchain.GenesisState"))
@@ -206,6 +277,10 @@ func (x *fastReflection_GenesisState) Clear(fd protoreflect.FieldDescriptor) {
 		x.ResourceList = nil
 	case "crudchain.crudchain.GenesisState.resourceCount":
 		x.ResourceCount = uint64(0)
+	case "crudchain.crudchain.GenesisState.filmList":
+		x.FilmList = nil
+	case "crudchain.crudchain.GenesisState.filmCount":
+		x.FilmCount = uint64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: crudchain.crudchain.GenesisState"))
@@ -233,6 +308,15 @@ func (x *fastReflection_GenesisState) Get(descriptor protoreflect.FieldDescripto
 		return protoreflect.ValueOfList(listValue)
 	case "crudchain.crudchain.GenesisState.resourceCount":
 		value := x.ResourceCount
+		return protoreflect.ValueOfUint64(value)
+	case "crudchain.crudchain.GenesisState.filmList":
+		if len(x.FilmList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_4_list{})
+		}
+		listValue := &_GenesisState_4_list{list: &x.FilmList}
+		return protoreflect.ValueOfList(listValue)
+	case "crudchain.crudchain.GenesisState.filmCount":
+		value := x.FilmCount
 		return protoreflect.ValueOfUint64(value)
 	default:
 		if descriptor.IsExtension() {
@@ -262,6 +346,12 @@ func (x *fastReflection_GenesisState) Set(fd protoreflect.FieldDescriptor, value
 		x.ResourceList = *clv.list
 	case "crudchain.crudchain.GenesisState.resourceCount":
 		x.ResourceCount = value.Uint()
+	case "crudchain.crudchain.GenesisState.filmList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_4_list)
+		x.FilmList = *clv.list
+	case "crudchain.crudchain.GenesisState.filmCount":
+		x.FilmCount = value.Uint()
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: crudchain.crudchain.GenesisState"))
@@ -293,8 +383,16 @@ func (x *fastReflection_GenesisState) Mutable(fd protoreflect.FieldDescriptor) p
 		}
 		value := &_GenesisState_2_list{list: &x.ResourceList}
 		return protoreflect.ValueOfList(value)
+	case "crudchain.crudchain.GenesisState.filmList":
+		if x.FilmList == nil {
+			x.FilmList = []*Film{}
+		}
+		value := &_GenesisState_4_list{list: &x.FilmList}
+		return protoreflect.ValueOfList(value)
 	case "crudchain.crudchain.GenesisState.resourceCount":
 		panic(fmt.Errorf("field resourceCount of message crudchain.crudchain.GenesisState is not mutable"))
+	case "crudchain.crudchain.GenesisState.filmCount":
+		panic(fmt.Errorf("field filmCount of message crudchain.crudchain.GenesisState is not mutable"))
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: crudchain.crudchain.GenesisState"))
@@ -315,6 +413,11 @@ func (x *fastReflection_GenesisState) NewField(fd protoreflect.FieldDescriptor) 
 		list := []*Resource{}
 		return protoreflect.ValueOfList(&_GenesisState_2_list{list: &list})
 	case "crudchain.crudchain.GenesisState.resourceCount":
+		return protoreflect.ValueOfUint64(uint64(0))
+	case "crudchain.crudchain.GenesisState.filmList":
+		list := []*Film{}
+		return protoreflect.ValueOfList(&_GenesisState_4_list{list: &list})
+	case "crudchain.crudchain.GenesisState.filmCount":
 		return protoreflect.ValueOfUint64(uint64(0))
 	default:
 		if fd.IsExtension() {
@@ -398,6 +501,15 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 		if x.ResourceCount != 0 {
 			n += 1 + runtime.Sov(uint64(x.ResourceCount))
 		}
+		if len(x.FilmList) > 0 {
+			for _, e := range x.FilmList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if x.FilmCount != 0 {
+			n += 1 + runtime.Sov(uint64(x.FilmCount))
+		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
 		}
@@ -426,6 +538,27 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 		if x.unknownFields != nil {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.FilmCount != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.FilmCount))
+			i--
+			dAtA[i] = 0x28
+		}
+		if len(x.FilmList) > 0 {
+			for iNdEx := len(x.FilmList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.FilmList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x22
+			}
 		}
 		if x.ResourceCount != 0 {
 			i = runtime.EncodeVarint(dAtA, i, uint64(x.ResourceCount))
@@ -600,6 +733,59 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 						break
 					}
 				}
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field FilmList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.FilmList = append(x.FilmList, &Film{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.FilmList[len(x.FilmList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 5:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field FilmCount", wireType)
+				}
+				x.FilmCount = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.FilmCount |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
 			default:
 				iNdEx = preIndex
 				skippy, err := runtime.Skip(dAtA[iNdEx:])
@@ -658,6 +844,8 @@ type GenesisState struct {
 	Params        *Params     `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
 	ResourceList  []*Resource `protobuf:"bytes,2,rep,name=resourceList,proto3" json:"resourceList,omitempty"`
 	ResourceCount uint64      `protobuf:"varint,3,opt,name=resourceCount,proto3" json:"resourceCount,omitempty"`
+	FilmList      []*Film     `protobuf:"bytes,4,rep,name=filmList,proto3" json:"filmList,omitempty"`
+	FilmCount     uint64      `protobuf:"varint,5,opt,name=filmCount,proto3" json:"filmCount,omitempty"`
 }
 
 func (x *GenesisState) Reset() {
@@ -701,6 +889,20 @@ func (x *GenesisState) GetResourceCount() uint64 {
 	return 0
 }
 
+func (x *GenesisState) GetFilmList() []*Film {
+	if x != nil {
+		return x.FilmList
+	}
+	return nil
+}
+
+func (x *GenesisState) GetFilmCount() uint64 {
+	if x != nil {
+		return x.FilmCount
+	}
+	return 0
+}
+
 var File_crudchain_crudchain_genesis_proto protoreflect.FileDescriptor
 
 var file_crudchain_crudchain_genesis_proto_rawDesc = []byte{
@@ -714,7 +916,9 @@ var file_crudchain_crudchain_genesis_proto_rawDesc = []byte{
 	0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x1a, 0x22, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x63,
 	0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
-	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xbd, 0x01, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65,
+	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1e, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61,
+	0x69, 0x6e, 0x2f, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x66, 0x69, 0x6c,
+	0x6d, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x98, 0x02, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65,
 	0x73, 0x69, 0x73, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x3e, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61,
 	0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x63, 0x72, 0x75, 0x64, 0x63,
 	0x68, 0x61, 0x69, 0x6e, 0x2e, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x50,
@@ -726,19 +930,25 @@ var file_crudchain_crudchain_genesis_proto_rawDesc = []byte{
 	0xde, 0x1f, 0x00, 0x52, 0x0c, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4c, 0x69, 0x73,
 	0x74, 0x12, 0x24, 0x0a, 0x0d, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x43, 0x6f, 0x75,
 	0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0d, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72,
-	0x63, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x42, 0xb7, 0x01, 0x0a, 0x17, 0x63, 0x6f, 0x6d, 0x2e,
-	0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68,
-	0x61, 0x69, 0x6e, 0x42, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x50, 0x72, 0x6f, 0x74,
-	0x6f, 0x50, 0x01, 0x5a, 0x21, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x61,
-	0x70, 0x69, 0x2f, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x63, 0x72, 0x75,
-	0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0xa2, 0x02, 0x03, 0x43, 0x43, 0x58, 0xaa, 0x02, 0x13, 0x43,
-	0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61,
-	0x69, 0x6e, 0xca, 0x02, 0x13, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x43,
-	0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0xe2, 0x02, 0x1f, 0x43, 0x72, 0x75, 0x64, 0x63,
-	0x68, 0x61, 0x69, 0x6e, 0x5c, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x47,
-	0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x14, 0x43, 0x72, 0x75,
-	0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x3a, 0x3a, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69,
-	0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x3b, 0x0a, 0x08, 0x66, 0x69, 0x6c, 0x6d, 0x4c,
+	0x69, 0x73, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x63, 0x72, 0x75, 0x64,
+	0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2e,
+	0x46, 0x69, 0x6c, 0x6d, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x08, 0x66, 0x69, 0x6c, 0x6d,
+	0x4c, 0x69, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x66, 0x69, 0x6c, 0x6d, 0x43, 0x6f, 0x75, 0x6e,
+	0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x66, 0x69, 0x6c, 0x6d, 0x43, 0x6f, 0x75,
+	0x6e, 0x74, 0x42, 0xb7, 0x01, 0x0a, 0x17, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x72, 0x75, 0x64, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x2e, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x42, 0x0c,
+	0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x21,
+	0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x63, 0x72,
+	0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x2f, 0x63, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69,
+	0x6e, 0xa2, 0x02, 0x03, 0x43, 0x43, 0x58, 0xaa, 0x02, 0x13, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68,
+	0x61, 0x69, 0x6e, 0x2e, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0xca, 0x02, 0x13,
+	0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68,
+	0x61, 0x69, 0x6e, 0xe2, 0x02, 0x1f, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c,
+	0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74,
+	0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x14, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69,
+	0x6e, 0x3a, 0x3a, 0x43, 0x72, 0x75, 0x64, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -758,15 +968,17 @@ var file_crudchain_crudchain_genesis_proto_goTypes = []interface{}{
 	(*GenesisState)(nil), // 0: crudchain.crudchain.GenesisState
 	(*Params)(nil),       // 1: crudchain.crudchain.Params
 	(*Resource)(nil),     // 2: crudchain.crudchain.Resource
+	(*Film)(nil),         // 3: crudchain.crudchain.Film
 }
 var file_crudchain_crudchain_genesis_proto_depIdxs = []int32{
 	1, // 0: crudchain.crudchain.GenesisState.params:type_name -> crudchain.crudchain.Params
 	2, // 1: crudchain.crudchain.GenesisState.resourceList:type_name -> crudchain.crudchain.Resource
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	3, // 2: crudchain.crudchain.GenesisState.filmList:type_name -> crudchain.crudchain.Film
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_crudchain_crudchain_genesis_proto_init() }
@@ -776,6 +988,7 @@ func file_crudchain_crudchain_genesis_proto_init() {
 	}
 	file_crudchain_crudchain_params_proto_init()
 	file_crudchain_crudchain_resource_proto_init()
+	file_crudchain_crudchain_film_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_crudchain_crudchain_genesis_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenesisState); i {

@@ -298,6 +298,542 @@ func (m *QueryAllResourceResponse) GetPagination() *query.PageResponse {
 	return nil
 }
 
+type QueryShowResourceByNameRequest struct {
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+}
+
+func (m *QueryShowResourceByNameRequest) Reset()         { *m = QueryShowResourceByNameRequest{} }
+func (m *QueryShowResourceByNameRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryShowResourceByNameRequest) ProtoMessage()    {}
+func (*QueryShowResourceByNameRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{6}
+}
+func (m *QueryShowResourceByNameRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowResourceByNameRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowResourceByNameRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowResourceByNameRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowResourceByNameRequest.Merge(m, src)
+}
+func (m *QueryShowResourceByNameRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowResourceByNameRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowResourceByNameRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowResourceByNameRequest proto.InternalMessageInfo
+
+func (m *QueryShowResourceByNameRequest) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type QueryShowResourceByNameResponse struct {
+	Resource *Resource `protobuf:"bytes,1,opt,name=resource,proto3" json:"resource,omitempty"`
+}
+
+func (m *QueryShowResourceByNameResponse) Reset()         { *m = QueryShowResourceByNameResponse{} }
+func (m *QueryShowResourceByNameResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryShowResourceByNameResponse) ProtoMessage()    {}
+func (*QueryShowResourceByNameResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{7}
+}
+func (m *QueryShowResourceByNameResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowResourceByNameResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowResourceByNameResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowResourceByNameResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowResourceByNameResponse.Merge(m, src)
+}
+func (m *QueryShowResourceByNameResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowResourceByNameResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowResourceByNameResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowResourceByNameResponse proto.InternalMessageInfo
+
+func (m *QueryShowResourceByNameResponse) GetResource() *Resource {
+	if m != nil {
+		return m.Resource
+	}
+	return nil
+}
+
+type QueryGetFilmRequest struct {
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *QueryGetFilmRequest) Reset()         { *m = QueryGetFilmRequest{} }
+func (m *QueryGetFilmRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryGetFilmRequest) ProtoMessage()    {}
+func (*QueryGetFilmRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{8}
+}
+func (m *QueryGetFilmRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetFilmRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetFilmRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetFilmRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetFilmRequest.Merge(m, src)
+}
+func (m *QueryGetFilmRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetFilmRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetFilmRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetFilmRequest proto.InternalMessageInfo
+
+func (m *QueryGetFilmRequest) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type QueryGetFilmResponse struct {
+	Film Film `protobuf:"bytes,1,opt,name=Film,proto3" json:"Film"`
+}
+
+func (m *QueryGetFilmResponse) Reset()         { *m = QueryGetFilmResponse{} }
+func (m *QueryGetFilmResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryGetFilmResponse) ProtoMessage()    {}
+func (*QueryGetFilmResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{9}
+}
+func (m *QueryGetFilmResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetFilmResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetFilmResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetFilmResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetFilmResponse.Merge(m, src)
+}
+func (m *QueryGetFilmResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetFilmResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetFilmResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetFilmResponse proto.InternalMessageInfo
+
+func (m *QueryGetFilmResponse) GetFilm() Film {
+	if m != nil {
+		return m.Film
+	}
+	return Film{}
+}
+
+type QueryAllFilmRequest struct {
+	Pagination *query.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryAllFilmRequest) Reset()         { *m = QueryAllFilmRequest{} }
+func (m *QueryAllFilmRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryAllFilmRequest) ProtoMessage()    {}
+func (*QueryAllFilmRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{10}
+}
+func (m *QueryAllFilmRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAllFilmRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAllFilmRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAllFilmRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAllFilmRequest.Merge(m, src)
+}
+func (m *QueryAllFilmRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAllFilmRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAllFilmRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAllFilmRequest proto.InternalMessageInfo
+
+func (m *QueryAllFilmRequest) GetPagination() *query.PageRequest {
+	if m != nil {
+		return m.Pagination
+	}
+	return nil
+}
+
+type QueryAllFilmResponse struct {
+	Film       []Film              `protobuf:"bytes,1,rep,name=Film,proto3" json:"Film"`
+	Pagination *query.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryAllFilmResponse) Reset()         { *m = QueryAllFilmResponse{} }
+func (m *QueryAllFilmResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryAllFilmResponse) ProtoMessage()    {}
+func (*QueryAllFilmResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{11}
+}
+func (m *QueryAllFilmResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAllFilmResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAllFilmResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAllFilmResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAllFilmResponse.Merge(m, src)
+}
+func (m *QueryAllFilmResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAllFilmResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAllFilmResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAllFilmResponse proto.InternalMessageInfo
+
+func (m *QueryAllFilmResponse) GetFilm() []Film {
+	if m != nil {
+		return m.Film
+	}
+	return nil
+}
+
+func (m *QueryAllFilmResponse) GetPagination() *query.PageResponse {
+	if m != nil {
+		return m.Pagination
+	}
+	return nil
+}
+
+type QueryShowFilmByGenreRequest struct {
+	Gere string `protobuf:"bytes,1,opt,name=gere,proto3" json:"gere,omitempty"`
+}
+
+func (m *QueryShowFilmByGenreRequest) Reset()         { *m = QueryShowFilmByGenreRequest{} }
+func (m *QueryShowFilmByGenreRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryShowFilmByGenreRequest) ProtoMessage()    {}
+func (*QueryShowFilmByGenreRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{12}
+}
+func (m *QueryShowFilmByGenreRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowFilmByGenreRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowFilmByGenreRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowFilmByGenreRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowFilmByGenreRequest.Merge(m, src)
+}
+func (m *QueryShowFilmByGenreRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowFilmByGenreRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowFilmByGenreRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowFilmByGenreRequest proto.InternalMessageInfo
+
+func (m *QueryShowFilmByGenreRequest) GetGere() string {
+	if m != nil {
+		return m.Gere
+	}
+	return ""
+}
+
+type QueryShowFilmByGenreResponse struct {
+	Film *Film `protobuf:"bytes,1,opt,name=film,proto3" json:"film,omitempty"`
+}
+
+func (m *QueryShowFilmByGenreResponse) Reset()         { *m = QueryShowFilmByGenreResponse{} }
+func (m *QueryShowFilmByGenreResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryShowFilmByGenreResponse) ProtoMessage()    {}
+func (*QueryShowFilmByGenreResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{13}
+}
+func (m *QueryShowFilmByGenreResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowFilmByGenreResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowFilmByGenreResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowFilmByGenreResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowFilmByGenreResponse.Merge(m, src)
+}
+func (m *QueryShowFilmByGenreResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowFilmByGenreResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowFilmByGenreResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowFilmByGenreResponse proto.InternalMessageInfo
+
+func (m *QueryShowFilmByGenreResponse) GetFilm() *Film {
+	if m != nil {
+		return m.Film
+	}
+	return nil
+}
+
+type QueryShowFilmGenreRequest struct {
+	Genre string `protobuf:"bytes,1,opt,name=genre,proto3" json:"genre,omitempty"`
+}
+
+func (m *QueryShowFilmGenreRequest) Reset()         { *m = QueryShowFilmGenreRequest{} }
+func (m *QueryShowFilmGenreRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryShowFilmGenreRequest) ProtoMessage()    {}
+func (*QueryShowFilmGenreRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{14}
+}
+func (m *QueryShowFilmGenreRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowFilmGenreRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowFilmGenreRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowFilmGenreRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowFilmGenreRequest.Merge(m, src)
+}
+func (m *QueryShowFilmGenreRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowFilmGenreRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowFilmGenreRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowFilmGenreRequest proto.InternalMessageInfo
+
+func (m *QueryShowFilmGenreRequest) GetGenre() string {
+	if m != nil {
+		return m.Genre
+	}
+	return ""
+}
+
+type QueryShowFilmGenreResponse struct {
+	Films []*Film `protobuf:"bytes,1,rep,name=films,proto3" json:"films,omitempty"`
+}
+
+func (m *QueryShowFilmGenreResponse) Reset()         { *m = QueryShowFilmGenreResponse{} }
+func (m *QueryShowFilmGenreResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryShowFilmGenreResponse) ProtoMessage()    {}
+func (*QueryShowFilmGenreResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{15}
+}
+func (m *QueryShowFilmGenreResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowFilmGenreResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowFilmGenreResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowFilmGenreResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowFilmGenreResponse.Merge(m, src)
+}
+func (m *QueryShowFilmGenreResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowFilmGenreResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowFilmGenreResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowFilmGenreResponse proto.InternalMessageInfo
+
+func (m *QueryShowFilmGenreResponse) GetFilms() []*Film {
+	if m != nil {
+		return m.Films
+	}
+	return nil
+}
+
+type QueryShowFilmNameRequest struct {
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+}
+
+func (m *QueryShowFilmNameRequest) Reset()         { *m = QueryShowFilmNameRequest{} }
+func (m *QueryShowFilmNameRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryShowFilmNameRequest) ProtoMessage()    {}
+func (*QueryShowFilmNameRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{16}
+}
+func (m *QueryShowFilmNameRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowFilmNameRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowFilmNameRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowFilmNameRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowFilmNameRequest.Merge(m, src)
+}
+func (m *QueryShowFilmNameRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowFilmNameRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowFilmNameRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowFilmNameRequest proto.InternalMessageInfo
+
+func (m *QueryShowFilmNameRequest) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type QueryShowFilmNameResponse struct {
+	Films []*Film `protobuf:"bytes,1,rep,name=films,proto3" json:"films,omitempty"`
+}
+
+func (m *QueryShowFilmNameResponse) Reset()         { *m = QueryShowFilmNameResponse{} }
+func (m *QueryShowFilmNameResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryShowFilmNameResponse) ProtoMessage()    {}
+func (*QueryShowFilmNameResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_1ecb5b3211b042bb, []int{17}
+}
+func (m *QueryShowFilmNameResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryShowFilmNameResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryShowFilmNameResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryShowFilmNameResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryShowFilmNameResponse.Merge(m, src)
+}
+func (m *QueryShowFilmNameResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryShowFilmNameResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryShowFilmNameResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryShowFilmNameResponse proto.InternalMessageInfo
+
+func (m *QueryShowFilmNameResponse) GetFilms() []*Film {
+	if m != nil {
+		return m.Films
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*QueryParamsRequest)(nil), "crudchain.crudchain.QueryParamsRequest")
 	proto.RegisterType((*QueryParamsResponse)(nil), "crudchain.crudchain.QueryParamsResponse")
@@ -305,44 +841,80 @@ func init() {
 	proto.RegisterType((*QueryGetResourceResponse)(nil), "crudchain.crudchain.QueryGetResourceResponse")
 	proto.RegisterType((*QueryAllResourceRequest)(nil), "crudchain.crudchain.QueryAllResourceRequest")
 	proto.RegisterType((*QueryAllResourceResponse)(nil), "crudchain.crudchain.QueryAllResourceResponse")
+	proto.RegisterType((*QueryShowResourceByNameRequest)(nil), "crudchain.crudchain.QueryShowResourceByNameRequest")
+	proto.RegisterType((*QueryShowResourceByNameResponse)(nil), "crudchain.crudchain.QueryShowResourceByNameResponse")
+	proto.RegisterType((*QueryGetFilmRequest)(nil), "crudchain.crudchain.QueryGetFilmRequest")
+	proto.RegisterType((*QueryGetFilmResponse)(nil), "crudchain.crudchain.QueryGetFilmResponse")
+	proto.RegisterType((*QueryAllFilmRequest)(nil), "crudchain.crudchain.QueryAllFilmRequest")
+	proto.RegisterType((*QueryAllFilmResponse)(nil), "crudchain.crudchain.QueryAllFilmResponse")
+	proto.RegisterType((*QueryShowFilmByGenreRequest)(nil), "crudchain.crudchain.QueryShowFilmByGenreRequest")
+	proto.RegisterType((*QueryShowFilmByGenreResponse)(nil), "crudchain.crudchain.QueryShowFilmByGenreResponse")
+	proto.RegisterType((*QueryShowFilmGenreRequest)(nil), "crudchain.crudchain.QueryShowFilmGenreRequest")
+	proto.RegisterType((*QueryShowFilmGenreResponse)(nil), "crudchain.crudchain.QueryShowFilmGenreResponse")
+	proto.RegisterType((*QueryShowFilmNameRequest)(nil), "crudchain.crudchain.QueryShowFilmNameRequest")
+	proto.RegisterType((*QueryShowFilmNameResponse)(nil), "crudchain.crudchain.QueryShowFilmNameResponse")
 }
 
 func init() { proto.RegisterFile("crudchain/crudchain/query.proto", fileDescriptor_1ecb5b3211b042bb) }
 
 var fileDescriptor_1ecb5b3211b042bb = []byte{
-	// 497 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x93, 0xcf, 0x6b, 0xd4, 0x40,
-	0x14, 0xc7, 0x77, 0xb6, 0x75, 0xd1, 0x29, 0x08, 0x4e, 0x0b, 0x96, 0x5d, 0x37, 0x5b, 0xc6, 0x1f,
-	0xad, 0x8b, 0xce, 0xd0, 0x8a, 0x57, 0xa5, 0x7b, 0xb0, 0xd7, 0x1a, 0xf0, 0xa2, 0xa7, 0xd9, 0x64,
-	0x88, 0x03, 0xd9, 0x4c, 0x9a, 0x49, 0xc4, 0x22, 0x82, 0xf8, 0x17, 0x28, 0xfd, 0x17, 0x3c, 0x78,
-	0xf4, 0xe0, 0x1f, 0xd1, 0x63, 0xc1, 0x8b, 0x27, 0x91, 0x5d, 0xc1, 0x7f, 0x43, 0x32, 0x33, 0xd9,
-	0xec, 0x9a, 0x34, 0xd5, 0x4b, 0x78, 0xbc, 0x7c, 0xdf, 0xfb, 0x7e, 0x66, 0xde, 0x1b, 0x38, 0xf0,
-	0x92, 0xcc, 0xf7, 0x5e, 0x32, 0x11, 0xd1, 0x32, 0x3a, 0xca, 0x78, 0x72, 0x4c, 0xe2, 0x44, 0xa6,
-	0x12, 0xad, 0xcf, 0xd3, 0x64, 0x1e, 0x75, 0xaf, 0xb1, 0x89, 0x88, 0x24, 0xd5, 0x5f, 0xa3, 0xeb,
-	0x6e, 0x04, 0x32, 0x90, 0x3a, 0xa4, 0x79, 0x64, 0xb3, 0x37, 0x02, 0x29, 0x83, 0x90, 0x53, 0x16,
-	0x0b, 0xca, 0xa2, 0x48, 0xa6, 0x2c, 0x15, 0x32, 0x52, 0xf6, 0xef, 0xd0, 0x93, 0x6a, 0x22, 0x15,
-	0x1d, 0x33, 0xc5, 0x8d, 0x29, 0x7d, 0xb5, 0x3b, 0xe6, 0x29, 0xdb, 0xa5, 0x31, 0x0b, 0x44, 0xa4,
-	0xc5, 0x56, 0xbb, 0x55, 0x07, 0x1a, 0xb3, 0x84, 0x4d, 0x8a, 0x6e, 0xb8, 0x4e, 0x91, 0x70, 0x25,
-	0xb3, 0xc4, 0xe3, 0x46, 0x83, 0x37, 0x20, 0x7a, 0x9a, 0xfb, 0x1c, 0xea, 0x42, 0x97, 0x1f, 0x65,
-	0x5c, 0xa5, 0xf8, 0x19, 0x5c, 0x5f, 0xca, 0xaa, 0x58, 0x46, 0x8a, 0xa3, 0x47, 0xb0, 0x63, 0x0c,
-	0x36, 0xc1, 0x16, 0xd8, 0x59, 0xdb, 0xeb, 0x91, 0x9a, 0xbb, 0x20, 0xa6, 0x68, 0x74, 0xe5, 0xf4,
-	0xc7, 0xa0, 0xf5, 0xf9, 0xf7, 0x97, 0x21, 0x70, 0x6d, 0x15, 0xbe, 0x0b, 0xaf, 0xeb, 0xb6, 0x07,
-	0x3c, 0x75, 0x2d, 0x86, 0x75, 0x44, 0x57, 0x61, 0x5b, 0xf8, 0xba, 0xed, 0xaa, 0xdb, 0x16, 0x3e,
-	0x7e, 0x01, 0x37, 0xab, 0x52, 0x8b, 0xf1, 0x18, 0x5e, 0x2e, 0x72, 0x16, 0xa4, 0x5f, 0x0b, 0x52,
-	0x88, 0x46, 0xab, 0x39, 0x8a, 0x3b, 0x2f, 0xc2, 0xcc, 0x72, 0xec, 0x87, 0xe1, 0xdf, 0x1c, 0x4f,
-	0x20, 0x2c, 0x6f, 0xda, 0x76, 0xbf, 0x43, 0xcc, 0x58, 0x48, 0x3e, 0x16, 0x62, 0x76, 0xc1, 0x8e,
-	0x85, 0x1c, 0xb2, 0xa0, 0xa8, 0x75, 0x17, 0x2a, 0xf1, 0x27, 0x60, 0x0f, 0xb0, 0xe4, 0x51, 0x7b,
-	0x80, 0x95, 0xff, 0x3e, 0x00, 0x3a, 0x58, 0xa2, 0x6c, 0x6b, 0xca, 0xed, 0x0b, 0x29, 0x8d, 0xfb,
-	0x22, 0xe6, 0xde, 0xd7, 0x15, 0x78, 0x49, 0x63, 0xa2, 0x77, 0x00, 0x76, 0xcc, 0xe4, 0xd0, 0x76,
-	0x2d, 0x4c, 0x75, 0x4d, 0xba, 0x3b, 0x17, 0x0b, 0x8d, 0x27, 0xbe, 0xf9, 0xfe, 0xdb, 0xaf, 0x93,
-	0x76, 0x1f, 0xf5, 0xe8, 0xf9, 0x5b, 0x8b, 0x4e, 0x40, 0x79, 0x2f, 0xe8, 0xde, 0xf9, 0xbd, 0xab,
-	0xeb, 0xd3, 0xbd, 0xff, 0x8f, 0x6a, 0x8b, 0x33, 0xd4, 0x38, 0xb7, 0x10, 0xa6, 0x4d, 0x4f, 0x84,
-	0xbe, 0x11, 0xfe, 0x5b, 0xf4, 0x11, 0xc0, 0xb5, 0xa2, 0xc1, 0x7e, 0x18, 0x36, 0x81, 0x55, 0xf7,
-	0xa9, 0x09, 0xac, 0x66, 0x33, 0xf0, 0x6d, 0x0d, 0x36, 0x40, 0xfd, 0x46, 0xb0, 0xd1, 0xc3, 0xd3,
-	0xa9, 0x03, 0xce, 0xa6, 0x0e, 0xf8, 0x39, 0x75, 0xc0, 0x87, 0x99, 0xd3, 0x3a, 0x9b, 0x39, 0xad,
-	0xef, 0x33, 0xa7, 0xf5, 0xbc, 0x57, 0xaa, 0x5f, 0x2f, 0x54, 0xa6, 0xc7, 0x31, 0x57, 0xe3, 0x8e,
-	0x7e, 0xf3, 0x0f, 0xfe, 0x04, 0x00, 0x00, 0xff, 0xff, 0xc7, 0x1a, 0xbe, 0x13, 0xe4, 0x04, 0x00,
-	0x00,
+	// 893 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0xcd, 0x6e, 0xeb, 0x44,
+	0x14, 0xc7, 0x33, 0xb9, 0x69, 0xb9, 0xf7, 0x5c, 0x3e, 0xc4, 0x34, 0x12, 0xad, 0xd3, 0x3a, 0x65,
+	0xa0, 0x6d, 0x1a, 0xb5, 0x9e, 0xa6, 0x29, 0x48, 0xdd, 0x80, 0xda, 0x45, 0xb3, 0x80, 0xa2, 0x62,
+	0xc4, 0x86, 0x0f, 0x55, 0x4e, 0xe2, 0xba, 0x96, 0x1c, 0x3b, 0xb5, 0x1d, 0x4a, 0x54, 0x55, 0xe2,
+	0xe3, 0x05, 0x40, 0xe5, 0x05, 0x90, 0x10, 0x62, 0x85, 0x58, 0xf3, 0x04, 0x5d, 0x56, 0x62, 0xc3,
+	0x0a, 0xa1, 0x16, 0x89, 0x67, 0x60, 0x87, 0x66, 0x3c, 0x71, 0xec, 0xc4, 0x8e, 0x13, 0xa9, 0x9b,
+	0x68, 0xec, 0xfc, 0xcf, 0xf9, 0xff, 0x3c, 0x67, 0xfc, 0x4f, 0xa0, 0xdc, 0x72, 0x7b, 0xed, 0xd6,
+	0xb9, 0x66, 0xda, 0x74, 0xb8, 0xba, 0xe8, 0xe9, 0x6e, 0x5f, 0xe9, 0xba, 0x8e, 0xef, 0xe0, 0x85,
+	0xf0, 0xb6, 0x12, 0xae, 0xa4, 0x57, 0xb5, 0x8e, 0x69, 0x3b, 0x94, 0x7f, 0x06, 0x3a, 0xa9, 0x68,
+	0x38, 0x86, 0xc3, 0x97, 0x94, 0xad, 0xc4, 0xdd, 0x65, 0xc3, 0x71, 0x0c, 0x4b, 0xa7, 0x5a, 0xd7,
+	0xa4, 0x9a, 0x6d, 0x3b, 0xbe, 0xe6, 0x9b, 0x8e, 0xed, 0x89, 0x6f, 0xab, 0x2d, 0xc7, 0xeb, 0x38,
+	0x1e, 0x6d, 0x6a, 0x9e, 0x1e, 0x98, 0xd2, 0x2f, 0x6a, 0x4d, 0xdd, 0xd7, 0x6a, 0xb4, 0xab, 0x19,
+	0xa6, 0xcd, 0xc5, 0x42, 0xbb, 0x9a, 0x04, 0xda, 0xd5, 0x5c, 0xad, 0x33, 0xe8, 0x46, 0x92, 0x14,
+	0xae, 0xee, 0x39, 0x3d, 0xb7, 0xa5, 0x0b, 0x8d, 0x9c, 0xa4, 0x39, 0x33, 0xad, 0x4e, 0xf0, 0x3d,
+	0x29, 0x02, 0xfe, 0x90, 0x71, 0x9c, 0xf0, 0xc6, 0xaa, 0x7e, 0xd1, 0xd3, 0x3d, 0x9f, 0x7c, 0x0c,
+	0x0b, 0xb1, 0xbb, 0x5e, 0xd7, 0xb1, 0x3d, 0x1d, 0xbf, 0x03, 0xf3, 0x01, 0xc0, 0x22, 0x5a, 0x45,
+	0x95, 0xe7, 0xbb, 0x25, 0x25, 0x61, 0xaf, 0x94, 0xa0, 0xe8, 0xf0, 0xd9, 0xed, 0x5f, 0xe5, 0xdc,
+	0x2f, 0xff, 0xfe, 0x56, 0x45, 0xaa, 0xa8, 0x22, 0x9b, 0xf0, 0x1a, 0x6f, 0xdb, 0xd0, 0x7d, 0x55,
+	0x60, 0x0a, 0x47, 0xfc, 0x32, 0xe4, 0xcd, 0x36, 0x6f, 0x5b, 0x50, 0xf3, 0x66, 0x9b, 0x7c, 0x0a,
+	0x8b, 0xe3, 0x52, 0x81, 0xf1, 0x2e, 0x3c, 0x1d, 0xdc, 0x13, 0x20, 0x2b, 0x89, 0x20, 0x03, 0xd1,
+	0x61, 0x81, 0xa1, 0xa8, 0x61, 0x11, 0xd1, 0x04, 0xc7, 0x81, 0x65, 0x8d, 0x72, 0x1c, 0x01, 0x0c,
+	0x27, 0x21, 0xba, 0xaf, 0x2b, 0xc1, 0xd8, 0x14, 0x36, 0x36, 0x25, 0x38, 0x2b, 0x62, 0x6c, 0xca,
+	0x89, 0x66, 0x0c, 0x6a, 0xd5, 0x48, 0x25, 0xf9, 0x09, 0x89, 0x07, 0x88, 0x79, 0x24, 0x3e, 0xc0,
+	0x93, 0x99, 0x1f, 0x00, 0x37, 0x62, 0x94, 0x79, 0x4e, 0xb9, 0x91, 0x49, 0x19, 0xb8, 0xc7, 0x30,
+	0xf7, 0x40, 0xe6, 0x94, 0x1f, 0x9d, 0x3b, 0x97, 0xa1, 0x5b, 0xff, 0x03, 0xad, 0x13, 0x6e, 0x08,
+	0x86, 0x82, 0xad, 0x75, 0x82, 0x8d, 0x7e, 0xa6, 0xf2, 0x35, 0xf9, 0x0c, 0xca, 0xa9, 0x55, 0xe2,
+	0x11, 0xf7, 0xe1, 0xa9, 0x3b, 0xcb, 0x8c, 0xd4, 0x50, 0x4e, 0xd6, 0xc4, 0xe1, 0x6b, 0xe8, 0xfe,
+	0x91, 0x69, 0x75, 0xd2, 0x4e, 0xc8, 0x7b, 0x50, 0x8c, 0xcb, 0x84, 0x73, 0x1d, 0x0a, 0xec, 0x5a,
+	0xb8, 0x2e, 0x25, 0xba, 0x32, 0x81, 0xd8, 0x54, 0x2e, 0x26, 0x9f, 0x0b, 0xcf, 0x03, 0xcb, 0x8a,
+	0x7a, 0x3e, 0xd6, 0x69, 0xf8, 0x01, 0x09, 0xd8, 0xb0, 0xff, 0x18, 0xec, 0x93, 0xa9, 0x61, 0x1f,
+	0x6f, 0xfa, 0x35, 0x28, 0x85, 0x73, 0xe4, 0x2e, 0xfd, 0x86, 0x6e, 0xbb, 0xd1, 0xd1, 0x1b, 0xba,
+	0x1b, 0x8e, 0x9e, 0xad, 0xc9, 0x31, 0x2c, 0x27, 0x97, 0x88, 0x07, 0xda, 0x86, 0xc2, 0xd9, 0x34,
+	0xbb, 0xaf, 0x72, 0x19, 0xa9, 0xc1, 0x52, 0xac, 0x5d, 0xcc, 0xbf, 0x08, 0x73, 0x06, 0xbb, 0x16,
+	0x00, 0xc1, 0x05, 0x39, 0x06, 0x29, 0xa9, 0x44, 0xf8, 0x53, 0x98, 0x63, 0x8d, 0xbd, 0xcc, 0x1d,
+	0x55, 0x03, 0x1d, 0x51, 0xc4, 0x7b, 0x3a, 0x68, 0x97, 0x75, 0xf6, 0xdf, 0x1f, 0x21, 0x8e, 0x9d,
+	0xfa, 0x59, 0xdd, 0x77, 0xff, 0x03, 0x98, 0xe3, 0xed, 0xf0, 0x57, 0x08, 0xe6, 0x83, 0xe4, 0xc4,
+	0x1b, 0x89, 0x65, 0xe3, 0x31, 0x2d, 0x55, 0xb2, 0x85, 0x01, 0x18, 0x79, 0xe3, 0x9b, 0x3f, 0xfe,
+	0xb9, 0xc9, 0xaf, 0xe0, 0x12, 0x4d, 0xff, 0x55, 0xc1, 0x37, 0x68, 0x98, 0x4b, 0x78, 0x2b, 0xbd,
+	0xf7, 0x78, 0x7c, 0x4b, 0xdb, 0x53, 0xaa, 0x05, 0x4e, 0x95, 0xe3, 0xbc, 0x89, 0x09, 0x9d, 0xf4,
+	0x13, 0x46, 0xaf, 0xcc, 0xf6, 0x35, 0xfe, 0x1e, 0xc1, 0xf3, 0x41, 0x83, 0x03, 0xcb, 0x9a, 0x04,
+	0x36, 0x9e, 0xe7, 0x93, 0xc0, 0x12, 0x92, 0x99, 0xac, 0x71, 0xb0, 0x32, 0x5e, 0x99, 0x08, 0x86,
+	0x7f, 0x47, 0x80, 0xc7, 0xc3, 0x0f, 0xd7, 0xd3, 0xcd, 0x52, 0x03, 0x56, 0xda, 0x9b, 0xad, 0x48,
+	0x80, 0xee, 0x73, 0xd0, 0x3a, 0xae, 0x25, 0x82, 0x7a, 0xe7, 0xce, 0xe5, 0xe9, 0x80, 0xf6, 0xb4,
+	0xd9, 0x3f, 0x65, 0x47, 0x97, 0x5e, 0xb1, 0xcf, 0x6b, 0xfc, 0x2d, 0x0a, 0x42, 0x07, 0x57, 0x26,
+	0x0e, 0x2d, 0x92, 0x83, 0xd2, 0xe6, 0x14, 0x4a, 0x01, 0xb6, 0xce, 0xc1, 0x56, 0xb1, 0x4c, 0xd3,
+	0xfe, 0x79, 0x04, 0x63, 0xfd, 0x1a, 0xc1, 0x0b, 0xac, 0x90, 0x8d, 0xb4, 0x32, 0x71, 0x48, 0x53,
+	0x82, 0x8c, 0x44, 0x2b, 0x79, 0x9d, 0x83, 0x94, 0xf0, 0x52, 0x2a, 0x08, 0xfe, 0x15, 0xc1, 0x2b,
+	0x23, 0x41, 0x86, 0x77, 0x26, 0x8f, 0x63, 0x3c, 0x26, 0xa5, 0xda, 0x0c, 0x15, 0x82, 0xed, 0x6d,
+	0xce, 0xb6, 0x83, 0x95, 0xf4, 0xe9, 0x31, 0x40, 0x36, 0x39, 0x1e, 0x7a, 0xf4, 0x8a, 0x85, 0xef,
+	0x35, 0xfe, 0x19, 0xc1, 0x4b, 0xb1, 0xdc, 0xc3, 0x4a, 0xb6, 0x79, 0x0c, 0x96, 0x4e, 0xad, 0x17,
+	0xa8, 0x7b, 0x1c, 0x55, 0xc1, 0x5b, 0x19, 0xa8, 0x21, 0xa7, 0xcd, 0x40, 0x7f, 0x44, 0xf0, 0x62,
+	0x34, 0x21, 0xf1, 0x76, 0xb6, 0x6f, 0xf4, 0xa5, 0x50, 0xa6, 0x95, 0x0b, 0xca, 0x5d, 0x4e, 0xb9,
+	0x85, 0xab, 0x19, 0x94, 0x91, 0xf7, 0xe0, 0xf0, 0xad, 0xdb, 0x7b, 0x19, 0xdd, 0xdd, 0xcb, 0xe8,
+	0xef, 0x7b, 0x19, 0x7d, 0xf7, 0x20, 0xe7, 0xee, 0x1e, 0xe4, 0xdc, 0x9f, 0x0f, 0x72, 0xee, 0x93,
+	0xd2, 0xb0, 0xf4, 0xcb, 0x48, 0x1b, 0xbf, 0xdf, 0xd5, 0xbd, 0xe6, 0x3c, 0xff, 0xe3, 0x5c, 0xff,
+	0x3f, 0x00, 0x00, 0xff, 0xff, 0xc7, 0x0a, 0xda, 0xde, 0x49, 0x0c, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -362,6 +934,17 @@ type QueryClient interface {
 	// Queries a list of Resource items.
 	Resource(ctx context.Context, in *QueryGetResourceRequest, opts ...grpc.CallOption) (*QueryGetResourceResponse, error)
 	ResourceAll(ctx context.Context, in *QueryAllResourceRequest, opts ...grpc.CallOption) (*QueryAllResourceResponse, error)
+	// Queries a list of ShowResourceByName items.
+	ShowResourceByName(ctx context.Context, in *QueryShowResourceByNameRequest, opts ...grpc.CallOption) (*QueryShowResourceByNameResponse, error)
+	// Queries a list of Film items.
+	Film(ctx context.Context, in *QueryGetFilmRequest, opts ...grpc.CallOption) (*QueryGetFilmResponse, error)
+	FilmAll(ctx context.Context, in *QueryAllFilmRequest, opts ...grpc.CallOption) (*QueryAllFilmResponse, error)
+	// Queries a list of ShowFilmByGenre items.
+	ShowFilmByGenre(ctx context.Context, in *QueryShowFilmByGenreRequest, opts ...grpc.CallOption) (*QueryShowFilmByGenreResponse, error)
+	// Queries a list of ShowFilmGenre items.
+	ShowFilmGenre(ctx context.Context, in *QueryShowFilmGenreRequest, opts ...grpc.CallOption) (*QueryShowFilmGenreResponse, error)
+	// Queries a list of ShowFilmName items.
+	ShowFilmName(ctx context.Context, in *QueryShowFilmNameRequest, opts ...grpc.CallOption) (*QueryShowFilmNameResponse, error)
 }
 
 type queryClient struct {
@@ -399,6 +982,60 @@ func (c *queryClient) ResourceAll(ctx context.Context, in *QueryAllResourceReque
 	return out, nil
 }
 
+func (c *queryClient) ShowResourceByName(ctx context.Context, in *QueryShowResourceByNameRequest, opts ...grpc.CallOption) (*QueryShowResourceByNameResponse, error) {
+	out := new(QueryShowResourceByNameResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Query/ShowResourceByName", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) Film(ctx context.Context, in *QueryGetFilmRequest, opts ...grpc.CallOption) (*QueryGetFilmResponse, error) {
+	out := new(QueryGetFilmResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Query/Film", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) FilmAll(ctx context.Context, in *QueryAllFilmRequest, opts ...grpc.CallOption) (*QueryAllFilmResponse, error) {
+	out := new(QueryAllFilmResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Query/FilmAll", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) ShowFilmByGenre(ctx context.Context, in *QueryShowFilmByGenreRequest, opts ...grpc.CallOption) (*QueryShowFilmByGenreResponse, error) {
+	out := new(QueryShowFilmByGenreResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Query/ShowFilmByGenre", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) ShowFilmGenre(ctx context.Context, in *QueryShowFilmGenreRequest, opts ...grpc.CallOption) (*QueryShowFilmGenreResponse, error) {
+	out := new(QueryShowFilmGenreResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Query/ShowFilmGenre", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) ShowFilmName(ctx context.Context, in *QueryShowFilmNameRequest, opts ...grpc.CallOption) (*QueryShowFilmNameResponse, error) {
+	out := new(QueryShowFilmNameResponse)
+	err := c.cc.Invoke(ctx, "/crudchain.crudchain.Query/ShowFilmName", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 type QueryServer interface {
 	// Parameters queries the parameters of the module.
@@ -406,6 +1043,17 @@ type QueryServer interface {
 	// Queries a list of Resource items.
 	Resource(context.Context, *QueryGetResourceRequest) (*QueryGetResourceResponse, error)
 	ResourceAll(context.Context, *QueryAllResourceRequest) (*QueryAllResourceResponse, error)
+	// Queries a list of ShowResourceByName items.
+	ShowResourceByName(context.Context, *QueryShowResourceByNameRequest) (*QueryShowResourceByNameResponse, error)
+	// Queries a list of Film items.
+	Film(context.Context, *QueryGetFilmRequest) (*QueryGetFilmResponse, error)
+	FilmAll(context.Context, *QueryAllFilmRequest) (*QueryAllFilmResponse, error)
+	// Queries a list of ShowFilmByGenre items.
+	ShowFilmByGenre(context.Context, *QueryShowFilmByGenreRequest) (*QueryShowFilmByGenreResponse, error)
+	// Queries a list of ShowFilmGenre items.
+	ShowFilmGenre(context.Context, *QueryShowFilmGenreRequest) (*QueryShowFilmGenreResponse, error)
+	// Queries a list of ShowFilmName items.
+	ShowFilmName(context.Context, *QueryShowFilmNameRequest) (*QueryShowFilmNameResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -420,6 +1068,24 @@ func (*UnimplementedQueryServer) Resource(ctx context.Context, req *QueryGetReso
 }
 func (*UnimplementedQueryServer) ResourceAll(ctx context.Context, req *QueryAllResourceRequest) (*QueryAllResourceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResourceAll not implemented")
+}
+func (*UnimplementedQueryServer) ShowResourceByName(ctx context.Context, req *QueryShowResourceByNameRequest) (*QueryShowResourceByNameResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShowResourceByName not implemented")
+}
+func (*UnimplementedQueryServer) Film(ctx context.Context, req *QueryGetFilmRequest) (*QueryGetFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Film not implemented")
+}
+func (*UnimplementedQueryServer) FilmAll(ctx context.Context, req *QueryAllFilmRequest) (*QueryAllFilmResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FilmAll not implemented")
+}
+func (*UnimplementedQueryServer) ShowFilmByGenre(ctx context.Context, req *QueryShowFilmByGenreRequest) (*QueryShowFilmByGenreResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShowFilmByGenre not implemented")
+}
+func (*UnimplementedQueryServer) ShowFilmGenre(ctx context.Context, req *QueryShowFilmGenreRequest) (*QueryShowFilmGenreResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShowFilmGenre not implemented")
+}
+func (*UnimplementedQueryServer) ShowFilmName(ctx context.Context, req *QueryShowFilmNameRequest) (*QueryShowFilmNameResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ShowFilmName not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -480,6 +1146,114 @@ func _Query_ResourceAll_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_ShowResourceByName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryShowResourceByNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).ShowResourceByName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Query/ShowResourceByName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).ShowResourceByName(ctx, req.(*QueryShowResourceByNameRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_Film_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetFilmRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Film(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Query/Film",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Film(ctx, req.(*QueryGetFilmRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_FilmAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllFilmRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).FilmAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Query/FilmAll",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).FilmAll(ctx, req.(*QueryAllFilmRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_ShowFilmByGenre_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryShowFilmByGenreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).ShowFilmByGenre(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Query/ShowFilmByGenre",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).ShowFilmByGenre(ctx, req.(*QueryShowFilmByGenreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_ShowFilmGenre_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryShowFilmGenreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).ShowFilmGenre(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Query/ShowFilmGenre",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).ShowFilmGenre(ctx, req.(*QueryShowFilmGenreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_ShowFilmName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryShowFilmNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).ShowFilmName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crudchain.crudchain.Query/ShowFilmName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).ShowFilmName(ctx, req.(*QueryShowFilmNameRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Query_serviceDesc = _Query_serviceDesc
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "crudchain.crudchain.Query",
@@ -496,6 +1270,30 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ResourceAll",
 			Handler:    _Query_ResourceAll_Handler,
+		},
+		{
+			MethodName: "ShowResourceByName",
+			Handler:    _Query_ShowResourceByName_Handler,
+		},
+		{
+			MethodName: "Film",
+			Handler:    _Query_Film_Handler,
+		},
+		{
+			MethodName: "FilmAll",
+			Handler:    _Query_FilmAll_Handler,
+		},
+		{
+			MethodName: "ShowFilmByGenre",
+			Handler:    _Query_ShowFilmByGenre_Handler,
+		},
+		{
+			MethodName: "ShowFilmGenre",
+			Handler:    _Query_ShowFilmGenre_Handler,
+		},
+		{
+			MethodName: "ShowFilmName",
+			Handler:    _Query_ShowFilmName_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -703,6 +1501,415 @@ func (m *QueryAllResourceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error
 	return len(dAtA) - i, nil
 }
 
+func (m *QueryShowResourceByNameRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowResourceByNameRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowResourceByNameRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryShowResourceByNameResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowResourceByNameResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowResourceByNameResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Resource != nil {
+		{
+			size, err := m.Resource.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetFilmRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetFilmRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetFilmRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintQuery(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetFilmResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetFilmResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetFilmResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Film.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintQuery(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAllFilmRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAllFilmRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAllFilmRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAllFilmResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAllFilmResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAllFilmResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Film) > 0 {
+		for iNdEx := len(m.Film) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Film[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryShowFilmByGenreRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowFilmByGenreRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowFilmByGenreRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Gere) > 0 {
+		i -= len(m.Gere)
+		copy(dAtA[i:], m.Gere)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Gere)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryShowFilmByGenreResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowFilmByGenreResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowFilmByGenreResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Film != nil {
+		{
+			size, err := m.Film.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryShowFilmGenreRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowFilmGenreRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowFilmGenreRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Genre) > 0 {
+		i -= len(m.Genre)
+		copy(dAtA[i:], m.Genre)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Genre)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryShowFilmGenreResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowFilmGenreResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowFilmGenreResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Films) > 0 {
+		for iNdEx := len(m.Films) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Films[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryShowFilmNameRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowFilmNameRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowFilmNameRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryShowFilmNameResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryShowFilmNameResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryShowFilmNameResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Films) > 0 {
+		for iNdEx := len(m.Films) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Films[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -785,6 +1992,169 @@ func (m *QueryAllResourceResponse) Size() (n int) {
 	if m.Pagination != nil {
 		l = m.Pagination.Size()
 		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryShowResourceByNameRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryShowResourceByNameResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Resource != nil {
+		l = m.Resource.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryGetFilmRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Id != 0 {
+		n += 1 + sovQuery(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *QueryGetFilmResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.Film.Size()
+	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryAllFilmRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryAllFilmResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Film) > 0 {
+		for _, e := range m.Film {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
+	}
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryShowFilmByGenreRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Gere)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryShowFilmByGenreResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Film != nil {
+		l = m.Film.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryShowFilmGenreRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Genre)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryShowFilmGenreResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Films) > 0 {
+		for _, e := range m.Films {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *QueryShowFilmNameRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryShowFilmNameResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Films) > 0 {
+		for _, e := range m.Films {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
 	}
 	return n
 }
@@ -1262,6 +2632,1032 @@ func (m *QueryAllResourceResponse) Unmarshal(dAtA []byte) error {
 				m.Pagination = &query.PageResponse{}
 			}
 			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowResourceByNameRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowResourceByNameRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowResourceByNameRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowResourceByNameResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowResourceByNameResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowResourceByNameResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Resource", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Resource == nil {
+				m.Resource = &Resource{}
+			}
+			if err := m.Resource.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetFilmRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetFilmRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetFilmRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetFilmResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetFilmResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetFilmResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Film", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Film.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAllFilmRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAllFilmRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAllFilmRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageRequest{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAllFilmResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAllFilmResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAllFilmResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Film", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Film = append(m.Film, Film{})
+			if err := m.Film[len(m.Film)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageResponse{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowFilmByGenreRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowFilmByGenreRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowFilmByGenreRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Gere", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Gere = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowFilmByGenreResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowFilmByGenreResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowFilmByGenreResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Film", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Film == nil {
+				m.Film = &Film{}
+			}
+			if err := m.Film.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowFilmGenreRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowFilmGenreRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowFilmGenreRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Genre", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Genre = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowFilmGenreResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowFilmGenreResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowFilmGenreResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Films", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Films = append(m.Films, &Film{})
+			if err := m.Films[len(m.Films)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowFilmNameRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowFilmNameRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowFilmNameRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryShowFilmNameResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryShowFilmNameResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryShowFilmNameResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Films", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Films = append(m.Films, &Film{})
+			if err := m.Films[len(m.Films)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

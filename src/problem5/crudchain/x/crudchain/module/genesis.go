@@ -16,6 +16,13 @@ func InitGenesis(ctx sdk.Context, k keeper.Keeper, genState types.GenesisState) 
 
 	// Set resource count
 	k.SetResourceCount(ctx, genState.ResourceCount)
+	// Set all the film
+	for _, elem := range genState.FilmList {
+		k.SetFilm(ctx, elem)
+	}
+
+	// Set film count
+	k.SetFilmCount(ctx, genState.FilmCount)
 	// this line is used by starport scaffolding # genesis/module/init
 	if err := k.SetParams(ctx, genState.Params); err != nil {
 		panic(err)
@@ -29,6 +36,8 @@ func ExportGenesis(ctx sdk.Context, k keeper.Keeper) *types.GenesisState {
 
 	genesis.ResourceList = k.GetAllResource(ctx)
 	genesis.ResourceCount = k.GetResourceCount(ctx)
+	genesis.FilmList = k.GetAllFilm(ctx)
+	genesis.FilmCount = k.GetFilmCount(ctx)
 	// this line is used by starport scaffolding # genesis/module/export
 
 	return genesis

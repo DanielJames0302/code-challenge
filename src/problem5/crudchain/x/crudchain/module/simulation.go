@@ -35,6 +35,18 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgDeleteResource int = 100
 
+	opWeightMsgCreateFilm = "op_weight_msg_film"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgCreateFilm int = 100
+
+	opWeightMsgUpdateFilm = "op_weight_msg_film"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgUpdateFilm int = 100
+
+	opWeightMsgDeleteFilm = "op_weight_msg_film"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgDeleteFilm int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -57,6 +69,17 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 			},
 		},
 		ResourceCount: 2,
+		FilmList: []types.Film{
+			{
+				Id:      0,
+				Creator: sample.AccAddress(),
+			},
+			{
+				Id:      1,
+				Creator: sample.AccAddress(),
+			},
+		},
+		FilmCount: 2,
 		// this line is used by starport scaffolding # simapp/module/genesisState
 	}
 	simState.GenState[types.ModuleName] = simState.Cdc.MustMarshalJSON(&crudchainGenesis)
@@ -102,6 +125,39 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		crudchainsimulation.SimulateMsgDeleteResource(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
+	var weightMsgCreateFilm int
+	simState.AppParams.GetOrGenerate(opWeightMsgCreateFilm, &weightMsgCreateFilm, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateFilm = defaultWeightMsgCreateFilm
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateFilm,
+		crudchainsimulation.SimulateMsgCreateFilm(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgUpdateFilm int
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateFilm, &weightMsgUpdateFilm, nil,
+		func(_ *rand.Rand) {
+			weightMsgUpdateFilm = defaultWeightMsgUpdateFilm
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgUpdateFilm,
+		crudchainsimulation.SimulateMsgUpdateFilm(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgDeleteFilm int
+	simState.AppParams.GetOrGenerate(opWeightMsgDeleteFilm, &weightMsgDeleteFilm, nil,
+		func(_ *rand.Rand) {
+			weightMsgDeleteFilm = defaultWeightMsgDeleteFilm
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgDeleteFilm,
+		crudchainsimulation.SimulateMsgDeleteFilm(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
 	// this line is used by starport scaffolding # simapp/module/operation
 
 	return operations
@@ -131,6 +187,30 @@ func (am AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.Wei
 			defaultWeightMsgDeleteResource,
 			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
 				crudchainsimulation.SimulateMsgDeleteResource(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgCreateFilm,
+			defaultWeightMsgCreateFilm,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				crudchainsimulation.SimulateMsgCreateFilm(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgUpdateFilm,
+			defaultWeightMsgUpdateFilm,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				crudchainsimulation.SimulateMsgUpdateFilm(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgDeleteFilm,
+			defaultWeightMsgDeleteFilm,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				crudchainsimulation.SimulateMsgDeleteFilm(am.accountKeeper, am.bankKeeper, am.keeper)
 				return nil
 			},
 		),
