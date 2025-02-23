@@ -45,8 +45,20 @@ func (k Keeper) AppendResource(
 	// Create the resource
 	count := k.GetResourceCount(ctx)
 
-	// Set the ID of the appended value
-	resource.Id = count
+	// ------------------------------------------------------------------------------
+	// Consensus-Breaking Change:
+	// Instead of using an auto-incrementing counter for the resource ID, we now
+	// assign a fixed ID (e.g., 100) to every created resource.
+	//
+	// Why is this a consensus-breaking change?
+	// 1. **State Mismatch:** Nodes running the old logic would assign unique IDs,
+	//    while nodes running the new logic will always assign the same fixed ID.
+	//    This causes the state (and therefore the computed state root) to differ.
+	// 2. **Determinism:** Changing the state transition logic (here, the ID assignment)
+	//    breaks the determinism required for consensus, meaning some nodes will reject
+	//    blocks produced by nodes using the new logic.
+	// ------------------------------------------------------------------------------
+	resource.Id = 50
 
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.KeyPrefix(types.ResourceKey))
@@ -56,7 +68,7 @@ func (k Keeper) AppendResource(
 	// Update resource count
 	k.SetResourceCount(ctx, count+1)
 
-	return count
+	return 50
 }
 
 // SetResource set a specific resource in the store
